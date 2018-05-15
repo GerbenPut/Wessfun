@@ -79,7 +79,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel Taco
+                    Laravel Taco Thomas v2
                 </div>
 
                 <div class="links">
