@@ -11,6 +11,6 @@ class WessfunTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+        //  factory(App\Blog::class, 50)->create();
     }
 }
