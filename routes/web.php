@@ -32,3 +32,7 @@ Route::get('/test', function (){
    \App\User::find(2)->assignRole('RegisteredUser');
    \App\User::find(1)->assignRole('Admin');
 });
+
+Route::get('/help', function () {
+    return view('help');
+});
