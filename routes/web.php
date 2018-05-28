@@ -33,6 +33,12 @@ Route::get('/test', function (){
    \App\User::find(1)->assignRole('Admin');
 });
 
+/* CRUDS */
+
+Route::resource('/categories', 'CategoriesController');
+
+Route::get('/categories/{Categorie}/edit', 'CategoriesController@edit');
+
 Route::get('/help', function () {
     return view('help');
 });
