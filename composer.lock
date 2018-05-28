@@ -1,10 +1,10 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e2036248fd2b190f01b891dc693ac076",
+    "content-hash": "2f8794d9c3e6a930deb955d08f68c17c",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -365,52 +365,6 @@
                 "trusted proxy"
             ],
             "time": "2018-02-07T20:20:57+00:00"
-        },
-        {
-            "name": "hootlex/laravel-moderation",
-            "version": "v1.0.12",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/hootlex/laravel-moderation.git",
-                "reference": "e9bbc3af7fb56fb24503ffa5eaf1609a61021000"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/hootlex/laravel-moderation/zipball/e9bbc3af7fb56fb24503ffa5eaf1609a61021000",
-                "reference": "e9bbc3af7fb56fb24503ffa5eaf1609a61021000",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.4.0"
-            },
-            "require-dev": {
-                "laravel/laravel": "5.*",
-                "phpunit/phpunit": "5.*"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Hootlex\\Moderation\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Alex Kyriakidis",
-                    "email": "hootlex@icloud.com"
-                }
-            ],
-            "description": "A simple Content Moderation System for Laravel 5.* that allows you to Approve or Reject resources like posts, comments, users, etc.",
-            "keywords": [
-                "content-moderation",
-                "laravel",
-                "moderation",
-                "moderation-system"
-            ],
-            "time": "2017-07-16T07:42:32+00:00"
         },
         {
             "name": "jakub-onderka/php-console-color",
