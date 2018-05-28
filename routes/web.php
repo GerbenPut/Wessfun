@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+return view('PostsLayouts.master');
 });
 
 Auth::routes();
@@ -23,6 +23,8 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::resource('/posts', 'PostsController');
+Route::get('/posts/{Post}/edit', 'PostsController@edit');
 
 Route::group(['middleware' => ['role:Admin']], function () {
     Route::get('/admin', 'AdminController@index')->name('admin');
