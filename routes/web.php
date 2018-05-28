@@ -22,3 +22,12 @@ Route::get('/home', 'HomeController@index')->name('home');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+Route::resource('/comment', 'CommentsController');
+
+Route::get('/comment/{comment}/create', 'CommentsController@create');
+
+Route::get('comment/{comment}/edit', 'CommentsController@edit');
+
+
