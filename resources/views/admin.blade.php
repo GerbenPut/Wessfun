@@ -14,6 +14,8 @@
                             </div>
                         @endif
                             ik ben een admin (test)
+                            <embed src="http://127.0.0.1:8000/categories" style="width: 690px; height: 1080px;">
+
                     </div>
                 </div>
             </div>
