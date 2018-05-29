@@ -35,9 +35,14 @@ Route::get('/test', function (){
 
 /* CRUDS */
 
-Route::resource('/categories', 'CategoriesController');
 
-Route::get('/categories/{Categorie}/edit', 'CategoriesController@edit');
+Route::group(['middleware' => ['role:Admin']], function () {
+    Route::resource('/categories', 'CategoriesController');
+    Route::get('/categories/{Categorie}/edit', 'CategoriesController@edit');
+});
+
+
+
 
 Route::get('/help', function () {
     return view('help');

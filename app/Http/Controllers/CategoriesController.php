@@ -44,7 +44,7 @@ class CategoriesController extends Controller
         $category->description = $request ['description'];
         $category->save();
 
-        return redirect()->action('CategoriesController@index')->with('correct', 'category gemaakt');
+        return redirect()->action('CategoriesController@create')->with('correct', 'category gemaakt');
     }
 
     /**
