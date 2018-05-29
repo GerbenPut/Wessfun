@@ -13,9 +13,69 @@
                                 {{ session('status') }}
                             </div>
                         @endif
-                        ik ben een admin (test)
-                        <embed src="http://127.0.0.1:8000/categories" style="width: 690px; height: 400px;">
-                        <embed src="http://127.0.0.1:8000/categories/create" style="width: 690px; height: 300px;">
+                        <div class="categoriesindex">
+                            <table class="table">
+                                <thead class="thead-dark">
+                                <tr>
+
+                                    <th scope="col">Nr</th>
+                                    <th scope="col">category</th>
+                                    <th scope="col">description</th>
+                                    <th scope="col">Edit</th>
+                                    <th scope="col">Delete</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                @foreach ($categories as $category)
+                                    <tr>
+
+                                        <th scope="row">{{$category->id}}</th>
+                                        <td><a href="categories/{{$category->id}}"> {{$category->category}}</a></td>
+                                        <td>{{$category->description}}</td>
+                                        <td><a href="{{URL::to('categories/'.$category->id.'/edit')}}">
+                                                <button class="btn btn-primary" type="submit">Edit</button>
+                                            </a></td>
+                                        <td>{{ Form::open(array('url' => 'categories/'.$category->id, 'class' => 'pull-right')) }}
+                                            {{ Form::hidden('_method', 'DELETE') }}
+                                            {{ Form::submit('Delete', array('class' => 'btn btn-warning')) }}
+                                            {{ Form::close() }}
+                                        </td>
+                                    </tr>
+
+
+                                @endforeach
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="createform">
+                            {!! Form::open(['url' => 'categories', 'method' => 'POST']) !!}
+                            {!! Form::token() !!}
+
+                            <div class="form-group">
+                                {!! Form::label('category', 'category'); !!}
+                                {!! Form::text('category', '',['class' => 'form-control']) !!}
+                            </div>
+
+                            <div class="form-group">
+                                {!! Form::label('description', 'description'); !!}
+                                {!! Form::textarea('description', '',['class' => 'form-control', 'rows' => '3']) !!}
+                            </div>
+
+                            <div class="form-group">
+                                {!! Form::submit('Submit', ['class' => 'btn btn-default']); !!}
+                                {!! Form::close() !!}
+                            </div>
+
+                            @if ($errors->any())
+                                <div class="alert alert-danger">
+                                    <ul>
+                                        @foreach ($errors->all() as $error)
+                                            <li>{{ $error }}</li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                            @endif
+                        </div>
 
                     </div>
                 </div>
