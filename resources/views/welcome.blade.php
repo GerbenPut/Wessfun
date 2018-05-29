@@ -83,7 +83,6 @@
                     Wessfun
                 </div>
 
-                  @include('Posts.index')
 
                 <div class="links">
                     <a href="http://127.0.0.1:8000/admin">Admin page</a>

@@ -12,17 +12,19 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+return view('welcome');
 });
 
+Route::get('/joris', function () {
+    return view('welcome2');
+});
+
+Route::resource('/joris', 'ImagesController');
+
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-
 
 Route::group(['middleware' => ['role:Admin']], function () {
     Route::get('/admin', 'AdminController@index')->name('admin');
