@@ -19,53 +19,29 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-
-
 Route::group(['middleware' => ['role:Admin']], function () {
     Route::get('/admin', 'AdminController@index')->name('admin');
 });
-
+/* test has to be runned once after migrating and seeding */
 Route::get('/test', function (){
    \App\User::find(2)->assignRole('RegisteredUser');
    \App\User::find(1)->assignRole('Admin');
 });
 
-/* CRUDS */
-
-Route::resource('/categories', 'CategoriesController');
-
-Route::get('/categories/{Categorie}/edit', 'CategoriesController@edit');
-
 Route::get('/help', function () {
     return view('help');
 });
 
+/* CRUDS */
+/* Categories */
 Route::group(['middleware' => ['role:Admin']], function () {
-    Route::get('/admin', 'AdminController@index')->name('admin');
+    Route::resource('/categories', 'AdminController');
+    Route::get('/categories/{Categorie}/edit', 'AdminController@edit');
 });
 
-Route::get('/test', function (){
-   \App\User::find(2)->assignRole('RegisteredUser');
-   \App\User::find(1)->assignRole('Admin');
-});
-
-/* CRUDS */
-
-Route::resource('/categories', 'CategoriesController');
-
-Route::get('/categories/{Categorie}/edit', 'CategoriesController@edit');
-
-Route::get('/help', function () {
-    return view('help');
-});
-
+/* comments */
 Route::resource('/comment', 'CommentsController');
-
 Route::get('/comment/{comment}/create', 'CommentsController@create');
-
 Route::get('comment/{comment}/edit', 'CommentsController@edit');
 
 
