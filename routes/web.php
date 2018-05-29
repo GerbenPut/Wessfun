@@ -35,8 +35,8 @@ Route::get('/help', function () {
 /* CRUDS */
 /* Categories */
 Route::group(['middleware' => ['role:Admin']], function () {
-    Route::resource('/categories', 'CategoriesController');
-    Route::get('/categories/{Categorie}/edit', 'CategoriesController@edit');
+    Route::resource('/categories', 'AdminController');
+    Route::get('/categories/{Categorie}/edit', 'AdminController@edit');
 });
 
 /* comments */
