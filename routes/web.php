@@ -15,9 +15,6 @@ Route::get('/', function () {
 return view('welcome');
 });
 
-Route::get('/joris', function () {
-    return view('welcome2');
-});
 
 Route::resource('/joris', 'ImagesController');
 
