@@ -1,6 +1,7 @@
 @extends('layouts.master')
 
 @section('content')
+    <input type="button" value="Refresh Page" onClick="window.location.reload()">
     <table class="table">
         <thead class="thead-dark">
         <tr>
