@@ -19,6 +19,7 @@
                 font-weight: 100;
                 height: 100vh;
                 margin: 0;
+
             }
 
             .full-height {
@@ -81,6 +82,7 @@
                 <div class="title m-b-md">
                     Wessfun
                 </div>
+
 
                 <div class="links">
                     <a href="http://127.0.0.1:8000/admin">Admin page</a>
