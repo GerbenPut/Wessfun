@@ -1,4 +1,4 @@
-@extends('CommentLayouts.app')
+@extends('Layouts.app')
 
 @section('content')
     <div class="container">
