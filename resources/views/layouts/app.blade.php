@@ -56,6 +56,12 @@
                                     {{ __('Logout') }}
                                 </a>
 
+                                @role('Admin', 'web')
+                                <a class="dropdown-item" href="http://127.0.0.1:8000/admin">Admin page</a>
+                                @else
+                                    @endrole
+
+
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                     @csrf
                                 </form>
