@@ -11,7 +11,7 @@
     </div>
 
     <div class="form-group">
-        {!! Form::textarea('content', $comment->content, array('class' => 'form-control', 'rows'=> '5')); !!}
+        {!! Form::textarea('content', $comment->message, array('class' => 'form-control', 'rows'=> '5')); !!}
 
     </div>
 
