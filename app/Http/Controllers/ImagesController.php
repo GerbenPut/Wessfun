@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreImagePost;
 use App\Image;
 use Illuminate\Http\Request;
 
@@ -38,7 +39,7 @@ class ImagesController extends Controller
     {
         $image = new Image();
         $image->title = $request ['title'];
-        $image->discription = $request ['discription'];
+        $image->description = $request ['description'];
         $image->category = $request ['category'];
         $image->url = $request ['url'];
         $image->save();
@@ -54,7 +55,7 @@ class ImagesController extends Controller
      */
     public function show(Image $image)
     {
-        //
+        return view('images.show', compact('image'));
     }
 
     /**
@@ -65,7 +66,7 @@ class ImagesController extends Controller
      */
     public function edit(Image $image)
     {
-        //
+        return view('images.edit', compact('image'));
     }
 
     /**
@@ -77,7 +78,15 @@ class ImagesController extends Controller
      */
     public function update(Request $request, Image $image)
     {
-        //
+        $validatedDate = $request->validated();
+
+        $image->title = $request ['title'];
+        $image->description = $request ['description'];
+        $image->category = $request ['category'];
+        $image->url = $request ['url'];
+        $image->save();
+
+        return redirect()->action('ImagesController@index')->with('correct', 'image gewijzigt');
     }
 
     /**
@@ -88,6 +97,7 @@ class ImagesController extends Controller
      */
     public function destroy(Image $image)
     {
-        //
+        $image->delete();
+        return redirect()->action('ImagesController@index')->with('correct', 'Images verwijderd');
     }
 }

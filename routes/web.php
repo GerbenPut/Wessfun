@@ -16,7 +16,7 @@ return view('welcome');
 });
 
 
-Route::resource('/joris', 'ImagesController');
+
 
 
 Auth::routes();
@@ -51,4 +51,8 @@ Route::get('comment/{comment}/edit', 'CommentsController@edit');
 /* posts */
 Route::resource('/posts', 'PostsController');
 Route::get('/posts/{Post}/edit', 'PostsController@edit');
+
+/* images */
+Route::resource('/images', 'ImagesController');
+Route::get('/images/{Image}/edit', 'ImagesController@edit');
 
