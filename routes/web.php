@@ -12,13 +12,43 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+return view('welcome');
 });
 
+
+Route::resource('/joris', 'ImagesController');
+
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Auth::routes();
+Route::group(['middleware' => ['role:Admin']], function () {
+    Route::get('/admin', 'AdminController@index')->name('admin');
+});
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/test', function (){
+   \App\User::find(2)->assignRole('RegisteredUser');
+   \App\User::find(1)->assignRole('Admin');
+});
+
+Route::get('/help', function () {
+    return view('help');
+});
+
+/* CRUDS */
+/* Categories */
+Route::group(['middleware' => ['role:Admin']], function () {
+    Route::resource('/categories', 'AdminController');
+    Route::get('/categories/{Categorie}/edit', 'AdminController@edit');
+});
+
+/* comments */
+Route::resource('/comment', 'CommentsController');
+Route::get('/comment/{comment}/create', 'CommentsController@create');
+Route::get('comment/{comment}/edit', 'CommentsController@edit');
+
+/* posts */
+Route::resource('/posts', 'PostsController');
+Route::get('/posts/{Post}/edit', 'PostsController@edit');
+
