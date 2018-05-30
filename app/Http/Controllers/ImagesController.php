@@ -25,7 +25,7 @@ class ImagesController extends Controller
      */
     public function create()
     {
-        //
+        return view('Images.create');
     }
 
     /**
@@ -34,13 +34,13 @@ class ImagesController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreImagePost $request)
     {
-        $image = new image();
+        $image = new Image();
         $image->title = $request ['title'];
         $image->discription = $request ['discription'];
         $image->category = $request ['category'];
-        //hier komt de img naar url $image->url = $request ['url'];
+        $image->url = $request ['url'];
         $image->save();
 
         return redirect()->action('ImagesController@index')->with('correct', 'image toegevoegt');
