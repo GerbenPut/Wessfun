@@ -2,7 +2,7 @@
 
 @section('content')
 
-    {!! Form::open(['url' => 'categories', 'method' => 'POST']) !!}
+    {!! Form::open(['url' => 'u', 'method' => 'POST']) !!}
     {!! Form::token() !!}
 
     <div class="form-group">
