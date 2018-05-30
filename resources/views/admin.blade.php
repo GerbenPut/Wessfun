@@ -48,7 +48,7 @@
                             </table>
                         </div>
                         <div class="createform">
-                            {!! Form::open(['url' => 'admin', 'method' => 'POST']) !!}
+                            {!! Form::open(['url' => 'categories', 'method' => 'POST']) !!}
                             {!! Form::token() !!}
 
                             <div class="form-group">
