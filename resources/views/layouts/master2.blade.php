@@ -15,6 +15,7 @@
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
     <link href="{{asset('css/.css')}}" rel="stylesheet">
 </head>
+<body>
 {{--top-header start--}}
 <header class="top-header">
     <a href="{{ url('/') }}">Home</a>
@@ -30,11 +31,29 @@
     @endif
 </header>
 {{--top header ends--}}
-<body>
-<div class="container">
-    <main role="main" class="container">
-
-    </main><!-- /.container -->
+{{--main-div starts--}}
+<div class="main-div">
+    <section class="main-left-category">
+        {{--Hier komen de categories--}}
+        {{--Dit deel moet meebewegen als je scrolled--}}
+    </section>
+<main role="main">
+    <div class="main-tags">
+        {{--Hier komt de lijst met tags--}}
+        {{--@include('layouts.tags')--}}
+    </div>
+    <section class="main-images">
+        @include('layouts.image')
+    </section>
+</main>
+    <section class="main-right">
+        {{--Hier komt reclame???--}}
+    </section>
 </div>
+{{--main-div ends--}}
+<footer class="bottomfooter">
+    {{--Hier komt ??--}}
+    {{--Dit deel moet meebewegen als je scrolled--}}
+</footer>
 </body>
 </html>

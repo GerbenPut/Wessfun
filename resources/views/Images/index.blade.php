@@ -7,7 +7,6 @@
 <div id="test">
     @yield('content')
 </div>
-
 <div class="imagesindex">
     <table class="table">
         <thead class="thead-dark">
