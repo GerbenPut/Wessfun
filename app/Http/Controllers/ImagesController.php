@@ -8,6 +8,12 @@ use Illuminate\Http\Request;
 
 class ImagesController extends Controller
 {
+//    public function index2()
+//    {
+//        $images = image::all();
+//        return view('Images.index2', compact('images'));
+//    }
+
     /**
      * Display a listing of the resource.
      *
