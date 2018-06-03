@@ -11,6 +11,9 @@ class CommentsTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\Comment::class, 50)->create();
+        DB::table('comments')->insert([
+            'title' => 'hehe',
+            'message' => 'xD',
+        ]);
     }
 }

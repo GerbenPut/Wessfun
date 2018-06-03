@@ -12,6 +12,7 @@
         </div>
 
         @endforeach-->
+
         <table class="table">
             <caption>List of users</caption>
             <thead>
@@ -21,10 +22,13 @@
                 <th scope="col">Message</th>
                 <th scope="col">Edit</th>
                 <th scope="col">Delete</th>
+                <th> <a href="http://127.0.0.1:8000/comment/create">Comment create</a> </th>
                 <th scope="col"></th>
+
             </tr>
             </thead>
             <tbody>
+
             @foreach($comments as $comment)
 
                 <tr>
