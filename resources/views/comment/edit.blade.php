@@ -29,5 +29,5 @@
             </ul>
         </div>
     @endif
-
+    <a href="http://127.0.0.1:8000/comment">Back to comments</a>
 @endsection
