@@ -11,13 +11,12 @@
 |
 */
 
-Route::get('/', function () {
-return view('layouts.master2');
-});
+//Route::get('/', function () {
+//        return view('layouts.master2');
+//
+//});
 
-//Route::get('/', 'ImagesController@index2');
-
-
+Route::resource('/', 'ImagesController');
 
 
 Auth::routes();

@@ -13,7 +13,8 @@
 
 <div class="form-group">
     {!! Form::label('category', 'Category'); !!}
-    {!! Form::select('category', $image->category, array('L' => 'Large', 'S' => 'Small'), 'S');!!}
+    {{--{!! Form::select('category', $image->category, array('L' => 'Large', 'S' => 'Small'), 'S');!!}--}}
+    {!! Form::text('category', $image->category ,array('class' => 'form-control', 'rows' => '3'))!!}
 </div>
 
 <div class="form-group">

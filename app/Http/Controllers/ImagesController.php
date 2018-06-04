@@ -8,12 +8,6 @@ use Illuminate\Http\Request;
 
 class ImagesController extends Controller
 {
-//    public function index2()
-//    {
-//        $images = image::all();
-//        return view('Images.index2', compact('images'));
-//    }
-
     /**
      * Display a listing of the resource.
      *
@@ -22,7 +16,7 @@ class ImagesController extends Controller
     public function index()
     {
         $images = image::all();
-        return view('Images.index', compact('images'));
+        return view('layouts.master2', compact('images'));
     }
 
     /**
@@ -61,7 +55,7 @@ class ImagesController extends Controller
      */
     public function show(Image $image)
     {
-        return view('images.show', compact('image'));
+        return view('Images.show', compact('image'));
     }
 
     /**
@@ -72,7 +66,7 @@ class ImagesController extends Controller
      */
     public function edit(Image $image)
     {
-        return view('images.edit', compact('image'));
+        return view('Images.edit', compact('image'));
     }
 
     /**
@@ -82,7 +76,7 @@ class ImagesController extends Controller
      * @param  \App\Image  $image
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Image $image)
+    public function update(StoreImagePost $request, Image $image)
     {
         $validatedDate = $request->validated();
 

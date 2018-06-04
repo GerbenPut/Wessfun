@@ -43,10 +43,7 @@
         {{--@include('layouts.tags')--}}
     </div>
     <section class="main-images">
-        {{--@include('layouts.image')--}}
-        {{--@yield('image')--}}
-
-        {{--@include('Images.show')--}}
+        @include('Images.index2')
     </section>
 </main>
     <section class="main-right">
