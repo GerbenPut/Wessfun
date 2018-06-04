@@ -12,9 +12,9 @@
         </div>
 
         @endforeach-->
-
+        <a href="http://127.0.0.1:8000">Home</a>
         <table class="table">
-            <caption>List of users</caption>
+
             <thead>
             <tr>
                 <th scope="col">Id</th>
