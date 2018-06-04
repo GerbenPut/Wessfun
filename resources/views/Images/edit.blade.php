@@ -18,6 +18,12 @@
 </div>
 
 <div class="form-group">
+    {!! Form::label('sort', 'Sort'); !!}
+    {{--{!! Form::select('category', $image->category, array('L' => 'Large', 'S' => 'Small'), 'S');!!}--}}
+    {!! Form::text('sort', $image->sort ,array('class' => 'form-control', 'rows' => '3'))!!}
+</div>
+
+<div class="form-group">
     {!! Form::label('url', 'Url'); !!}
     {!! Form::text('url', $image->url ,array('class' => 'form-control'))!!}
 </div>
