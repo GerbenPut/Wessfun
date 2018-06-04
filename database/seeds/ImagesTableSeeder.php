@@ -11,6 +11,11 @@ class ImagesTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\Image::class, 10)->create();
+        DB::table('images')->insert([
+            'title' => 'hehe',
+            'description' => 'xD',
+            'category' => 'Funny',
+            'url' => 'http://www.ablemultimediadesign.com/wp-content/uploads/2017/04/27.gif',
+        ]);
     }
 }
