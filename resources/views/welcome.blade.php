@@ -83,7 +83,6 @@
                     Wessfun
                 </div>
 
-
                 <div class="links">
                     <a href="http://127.0.0.1:8000/admin">Admin page</a>
                     <a href="http://127.0.0.1:8000/posts">Posts</a>
@@ -91,6 +90,8 @@
                     <a href="https://forge.laravel.com">Forge</a>
                     <a href="https://github.com/laravel/laravel">GitHub</a>
                     @yield('links')
+                    @yield('content')
+
                 </div>
             </div>
         </div>
