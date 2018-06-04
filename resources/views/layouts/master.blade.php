@@ -25,7 +25,7 @@
         <div class="row">
             <div class="col-md-8 blog-main">
                 @include('layouts.message')
-                @yield('content')
+                @yield('image')
 
             </div><!-- /.blog-main -->
 
