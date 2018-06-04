@@ -37,15 +37,15 @@
         {{--Hier komen de categories--}}
         {{--Dit deel moet meebewegen als je scrolled--}}
     </section>
-<main role="main">
-    <div class="main-tags">
-        {{--Hier komt de lijst met tags--}}
-        {{--@include('layouts.tags')--}}
-    </div>
-    <section class="main-images">
-        @include('Images.index2')
-    </section>
-</main>
+    <main role="main">
+        <div class="main-tags">
+            {{--Hier komt de lijst met tags--}}
+            {{--@include('layouts.tags')--}}
+        </div>
+        <section class="main-images">
+            @include('Images.index2')
+        </section>
+    </main>
     <section class="main-right">
         {{--Hier komt reclame???--}}
     </section>

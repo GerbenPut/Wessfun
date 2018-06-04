@@ -16,7 +16,7 @@
 //
 //});
 
-Route::resource('/', 'ImagesController');
+Route::resource('/', 'ImagesController' );
 
 
 Auth::routes();
