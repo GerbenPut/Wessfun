@@ -5,7 +5,7 @@
         <div class="main-image">
             {{--Hier komt de Gif/Image/video--}}
             @foreach ($images as $image)
-            <img src="{{$image->url}}" style="height: 50%; width: auto">
+                        <a href="images/{{$image->id}}">     <img src="{{$image->url}}" style="height: 50%; width: auto"> </a>
             @endforeach
         </div>
         <footer class="main-images-footer">

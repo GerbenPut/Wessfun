@@ -1,21 +1,7 @@
-{{--@extends('layouts.master2')--}}
-{{--@include('../ImagesController.php')--}}
-{{--@section('image')--}}
-{{--{{ $images = image::all();--}}
 
-    {{--<article class="main-article">--}}
-    {{--<header class="main-images-header">--}}
-        {{--Hier komt de titel en description van de media--}}
-    {{--</header>--}}
-    {{--<div class="main-image">--}}
-        {{--Hier komt de Gif/Image/video--}}
-        {{--@foreach ($images as $image)--}}
-        {{--<img src="{{$image->url}}" style="height: 50%; width: auto">--}}
-        {{--@endforeach--}}
-        {{--<p>TEST</p>--}}
-    {{--</div>--}}
-    {{--<footer class="main-images-footer">--}}
-        {{--Hier komt het voten per media--}}
-    {{--</footer>--}}
-{{--</article>--}}
-{{--@endsection--}}
+    <div class="blog-post">
+        <h2 class="blog-post-title">{{$image->title}}</h2>
+        <p>{{$image->description}}</p>
+        <img src="{{$image->url}}" style="height: 50%; width: auto">
+    </div>
+    <a href="http://127.0.0.1:8000/">Back to home</a>

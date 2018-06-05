@@ -12,10 +12,12 @@ class ImagesTableSeeder extends Seeder
     public function run()
     {
         DB::table('images')->insert([
-            'title' => 'hehe',
-            'description' => 'xD',
-            'category' => 'Funny',
-            'url' => 'http://www.ablemultimediadesign.com/wp-content/uploads/2017/04/27.gif',
+            'title' => 'My post',
+            'description' => 'This is not a repost',
+            'category' => 'Meme',
+            'url' => 'https://i.redditmedia.com/qCEwFXfLBg-WWkKH-jrGWryIBTZhqb8f1I1x5znADcE.jpg?fit=crop&crop=faces%2Centropy&arh=2&w=640&s=14742c9ae5873486d5c405e7f6108113',
         ]);
+
+//        factory(App\Image::class, 50)->create();
     }
 }
