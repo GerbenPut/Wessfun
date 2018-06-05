@@ -55,7 +55,9 @@
                                                      document.getElementById('logout-form').submit();">
                                     {{ __('Logout') }}
                                 </a>
-
+                                @role('RegisteredUser', 'web')
+                                <a class="dropdown-item" href="http://127.0.0.1:8000/comment">Comment page</a>
+                                @endrole
                                 @role('Admin', 'web')
                                 <a class="dropdown-item" href="http://127.0.0.1:8000/admin">Admin page</a>
                                 @else
