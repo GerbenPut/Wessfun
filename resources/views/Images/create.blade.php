@@ -17,6 +17,11 @@
 </div>
 
 <div class="form-group">
+    {!! Form::label('sort', 'Sort'); !!}
+    {!! Form::select('sort', array('Video' => 'Video (must be embed)', 'Photo' => 'Photo'), 'S');!!}
+</div>
+
+<div class="form-group">
     {!! Form::label('url', 'Image-url'); !!}
     {!! Form::text('url', '',array('class' => 'form-control'))!!}
 </div>

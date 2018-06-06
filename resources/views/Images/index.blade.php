@@ -29,20 +29,26 @@
                 <td>{{$image->title}}</td>
                 <td>{{$image->description}}</td>
                 <td>{{$image->category}}</td>
+                <td>{{$image->sort}}</td>
                 {{--<td><a href={{$image->url}}</a></td>--}}
+                @if($image->sort)
                 <td><img src="{{$image->url}}" style="height: 50%; width: auto"></td>
+                @else
+
+                    @role('Admin', 'web')
                 <td><a href="{{URL::to('images/'.$image->id.'/edit')}}">
-                        <button class="btn btn-primary" type="submit">Edit</button>
+                        <button  type="submit">Edit</button>
                     </a></td>
                 <td>{{ Form::open(array('url' => 'images/'.$image->id, 'class' => 'pull-right')) }}
                     {{ Form::hidden('_method', 'DELETE') }}
                     {{ Form::submit('Delete', array('class' => 'btn btn-warning')) }}
                     {{ Form::close() }}
                 </td>
+                @else
+                    @endrole
             </tr>
 
-
-        @endforeach
+@endforeach
         </tbody>
     </table>
 </div>

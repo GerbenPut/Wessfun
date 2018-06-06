@@ -18,7 +18,6 @@
 <body>
 {{--top-header start--}}
 <header class="top-header">
-    <a href="{{ url('/home') }}">Home</a>
     @if (Route::has('login'))
         <div class="top-right links">
             @auth
@@ -40,7 +39,6 @@
     </section>
     <main role="main">
         <div class="main-tags">
-
             {{--Hier komt de lijst met tags--}}
             {{--@include('layouts.tags')--}}
         </div>
