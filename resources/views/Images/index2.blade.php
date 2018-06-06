@@ -6,6 +6,10 @@
             {{--Hier komt de Gif/Image/video--}}
             @foreach ($images as $image)
                         <a href="images/{{$image->id}}">     <img src="{{$image->url}}" style="height: 50%; width: auto"> </a>
+                <br>
+                        <a href="http://127.0.0.1:8000/comment">comment</a>
+                    <hr>
+
             @endforeach
         </div>
         <footer class="main-images-footer">

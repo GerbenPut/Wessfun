@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Comment;
+use App\Http\Requests\StoreCommentPost;
 use Illuminate\Http\Request;
 
 class CommentsController extends Controller
@@ -34,7 +35,7 @@ class CommentsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreCommentPost $request)
     {
         $validatedData = $request->validated;
 
@@ -75,7 +76,7 @@ class CommentsController extends Controller
      * @param  \App\Comment  $comment
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Comment $comment)
+    public function update(StoreCommentPost $request, Comment $comment)
     {
         $validatedData = $request->validated;
 
