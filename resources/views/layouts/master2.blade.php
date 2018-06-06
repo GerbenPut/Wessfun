@@ -10,7 +10,7 @@
 
     <!-- Bootstrap core CSS -->
     <link href="{{asset('css/app.css')}}" rel="stylesheet">
-
+    <link href="{{asset('scss/style.scss')}}" rel="stylesheet">
     <!-- Custom styles for this template -->
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
     <link href="{{asset('css/.css')}}" rel="stylesheet">
@@ -18,7 +18,7 @@
 <body>
 {{--top-header start--}}
 <header class="top-header">
-    <a href="{{ url('/') }}">Home</a>
+    <a href="{{ url('/home') }}">Home</a>
     @if (Route::has('login'))
         <div class="top-right links">
             @auth
@@ -40,6 +40,7 @@
     </section>
     <main role="main">
         <div class="main-tags">
+
             {{--Hier komt de lijst met tags--}}
             {{--@include('layouts.tags')--}}
         </div>

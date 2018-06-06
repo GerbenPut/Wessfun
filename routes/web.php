@@ -45,7 +45,6 @@ Route::group(['middleware' => ['role:Admin']], function () {
 
 /* comments */
 Route::resource('/comment', 'CommentsController');
-Route::get('/comment/{comment}/create', 'CommentsController@create');
 Route::get('comment/{comment}/edit', 'CommentsController@edit');
 
 /* posts */
