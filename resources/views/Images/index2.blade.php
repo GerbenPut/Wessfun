@@ -1,10 +1,12 @@
 @extends('Layouts.app')
 
 @section('content')
+
 <article class="main-article">
     <header class="main-images-header">
         {{--Hier komt de titel en description van de media--}}
     </header>
+
     <div class="main-image">
         {{--Hier komt de Gif/Image/video--}}
         <div class="createpostbutton">
@@ -13,12 +15,14 @@
             @endrole
             <br>
             @role('RegisteredUser', 'web')
-            <form action="{{ url('/create') }}">
+            {{--<form action="{{ url('/create') }}">--}}
+            <form action="http://127.0.0.1:8000/create">
                 <input type="submit" value="Create a post"/>
             </form>
             @else
                 @role('Admin', 'web')
-                <form action="{{ url('/create') }}">
+                {{--<form action="{{ url('/create') }}">--}}
+                    <form action="http://127.0.0.1:8000/create">
                     <input type="submit" value="Create a post"/>
                 </form>
             @else
