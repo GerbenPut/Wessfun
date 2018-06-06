@@ -13,14 +13,12 @@
 
 <div class="form-group">
     {!! Form::label('category', 'Category'); !!}
-    {{--{!! Form::select('category', $image->category, array('L' => 'Large', 'S' => 'Small'), 'S');!!}--}}
-    {!! Form::text('category', $image->category ,array('class' => 'form-control', 'rows' => '3'))!!}
+    {!! Form::select('category', array('Large' => 'Large', 'Small' => 'Small'), 'S');!!}
 </div>
 
 <div class="form-group">
     {!! Form::label('sort', 'Sort'); !!}
-    {{--{!! Form::select('category', $image->category, array('L' => 'Large', 'S' => 'Small'), 'S');!!}--}}
-    {!! Form::text('sort', $image->sort ,array('class' => 'form-control', 'rows' => '3'))!!}
+    {!! Form::select('sort', array('Video' => 'Video (must be embed)', 'Photo' => 'Photo'), 'S');!!}
 </div>
 
 <div class="form-group">

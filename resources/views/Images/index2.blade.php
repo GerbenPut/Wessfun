@@ -1,19 +1,45 @@
+@extends('Layouts.app')
+
+@section('content')
 <article class="main-article">
     <header class="main-images-header">
         {{--Hier komt de titel en description van de media--}}
     </header>
     <div class="main-image">
         {{--Hier komt de Gif/Image/video--}}
+        <div class="createpostbutton">
+            @role('User', 'web')
+            You must be registered to create a post
+            @endrole
+            <br>
+            @role('RegisteredUser', 'web')
+            <form action="{{ url('/create') }}">
+                <input type="submit" value="Create a post"/>
+            </form>
+            @else
+                @role('Admin', 'web')
+                <form action="{{ url('/create') }}">
+                    <input type="submit" value="Create a post"/>
+                </form>
+            @else
+                    You must be an registered user to create a post
+                @endrole
+            @endrole
+            <br>
+        </div>
         @foreach ($images as $image)
             {{--<img src="{{$image->url}}" style="height: 50%; width: auto">--}}
             <td>{{$image->title}}</td>
             <td>{{$image->description}}</td>
             <td>{{$image->category}}</td>
             <td>{{$image->sort}}</td>
-            @if($image->sort=='Image')
-                <img src="{{$image->url}}" style="height: 420px; width: 315px;">
+            @if($image->sort=='Video')
+                <video width="320" height="240" controls>
+                    <source src="{{$image->url}}" type="video/mp4">
+                    <source src="{{$image->url}}" type="video/ogg">
+                </video>
             @else
-                <iframe width="420" height="315" src="{{$image->url}}"></iframe>
+                <img src="{{$image->url}}" style="height: 420px; width: 315px;">
             @endif
 
             @role('Admin', 'web')
@@ -29,9 +55,9 @@
         @endforeach
 
 
-
     </div>
     <footer class="main-images-footer">
         {{--Hier komt het voten per media--}}
     </footer>
 </article>
+@endsection
