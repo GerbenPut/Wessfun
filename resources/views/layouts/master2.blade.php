@@ -18,7 +18,6 @@
 <body>
 {{--top-header start--}}
 <header class="top-header">
-    <a href="{{ url('/') }}">Home</a>
     @if (Route::has('login'))
         <div class="top-right links">
             @auth

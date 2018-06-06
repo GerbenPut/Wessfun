@@ -18,6 +18,7 @@ class CreateImagesTable extends Migration
             $table->string('title');
             $table->string('description');
             $table->string('category');
+            $table->string('sort');
             $table->string('url');
             $table->timestamps();
         });

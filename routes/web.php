@@ -40,7 +40,7 @@ Route::get('/help', function () {
 /* Categories */
 Route::group(['middleware' => ['role:Admin']], function () {
     Route::resource('/categories', 'AdminController');
-    Route::get('/categories/{Categorie}/edit', 'AdminController@edit');
+    Route::get('/categories/{Category}/edit', 'AdminController@edit');
 });
 
 /* comments */
