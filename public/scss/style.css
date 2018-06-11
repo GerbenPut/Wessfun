@@ -1,5 +1,6 @@
 .top-header {
   display: grid; }
+<<<<<<< Updated upstream
 
 .main-left-category {
   background: darkgreen; }
@@ -7,6 +8,11 @@
 .main-div {
   display: grid;
   grid-template-columns: 25% 45% 30%; }
+=======
+  .top-header .main-div {
+    display: grid;
+    grid-template-columns: 25% 45% 30%; }
+>>>>>>> Stashed changes
 
 .main-image {
   display: grid;
@@ -16,6 +22,9 @@
 
 .main-right {
   background: darkblue; }
+
+.main-left-category {
+  background: darkgreen; }
 
 .bottomfooter {
   background: #0c5460; }
