@@ -1,18 +1,9 @@
 .top-header {
   display: grid; }
- Updated upstream
-
-.main-left-category {
-  background: darkgreen; }
 
 .main-div {
   display: grid;
   grid-template-columns: 25% 45% 30%; }
-
-  .top-header .main-div {
-    display: grid;
-    grid-template-columns: 25% 45% 30%; }
->>>>>>> Stashed changes
 
 .main-image {
   display: grid;

@@ -1,13 +1,6 @@
 
 .top-header{
-display: grid;
-
-p{
-
-}
-
-.top-header{
-
+  display: grid;
 }
 .main-div{
 
@@ -19,22 +12,18 @@ p{
   grid-template-columns: 25% 45% 30%;
 }
 
-
-}
 .main-images{
 }
 
 .main-image {
-   display: grid;
-   height: 200px;
-   width: auto;
-   justify-items: center;
+  display: grid;
+  height: 200px;
+  width: auto;
+  justify-items: center;
   p{
 
   }
- }
-
-
+}
 
 .main-right {
   background: darkblue;
@@ -52,4 +41,3 @@ p{
 .main-image {
   background: red;
 }
-
