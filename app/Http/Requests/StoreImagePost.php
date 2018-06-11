@@ -27,6 +27,7 @@ class StoreImagePost extends FormRequest
             'title' => 'required',
             'description' => 'required',
             'category' => 'required',
+            'sort' => 'required',
             'url' => 'required',
 
         ];

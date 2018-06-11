@@ -1,4 +1,6 @@
 
+.top-header{
+display: grid;
 
 p{
 
@@ -17,9 +19,8 @@ p{
 
 .main-div{
   display: grid;
-  grid-template-columns: 20% 50% 30%;
-
-
+  grid-template-columns: 25% 45% 30%;
+}
 
 
 }
@@ -27,7 +28,15 @@ p{
 }
 
 .main-image {
-  height: 200px;
+   display: grid;
+   height: 200px;
+   width: auto;
+   justify-items: center;
+  p{
+
+  }
+ }
+
 }
 
 .main-right {

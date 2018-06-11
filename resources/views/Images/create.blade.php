@@ -18,7 +18,7 @@
 
 <div class="form-group">
     {!! Form::label('sort', 'Sort'); !!}
-    {!! Form::select('sort', array('Video' => 'Video (must be embed)', 'Photo' => 'Photo'), 'S');!!}
+    {!! Form::select('sort', array( 'Photo' => 'Photo', 'Video' => 'Video (must be embed)'), 'S');!!}
 </div>
 
 <div class="form-group">

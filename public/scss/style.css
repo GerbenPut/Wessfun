@@ -1,8 +1,18 @@
+.top-header {
+  display: grid; }
+
 .main-left-category {
   background: darkgreen; }
 
 .main-div {
   display: grid;
+  grid-template-columns: 25% 45% 30%; }
+
+.main-image {
+  display: grid;
+  height: 200px;
+  width: auto;
+  justify-items: center; }
   grid-template-columns: 20% 50% 30%; }
 
 .main-image {
