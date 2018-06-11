@@ -12,12 +12,16 @@
             <img src="{{$image->url}}" style="height: 50%; width: auto">
                     {{--{{$url = DB::table('images')->from ('images')->first());--}}
                     {{--echo $url->url;}}--}}
+                        {{--@foreach ($image->categories as $category)--}}
+                                {{--<p>{{$category->category}}</p>--}}
+                        {{--@endforeach--}}
                     <hr>
             @endforeach
 
         </div>
         <footer class="main-images-footer">
             {{--Hier komt het voten per media--}}
+
         </footer>
 </article>
 {{--@endsection--}}

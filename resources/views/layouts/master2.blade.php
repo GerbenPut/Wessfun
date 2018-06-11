@@ -36,6 +36,7 @@
     <section class="main-left-category">
         {{--Hier komen de categories--}}
         {{--Dit deel moet meebewegen als je scrolled--}}
+        @include('Images.show')
     </section>
     <main role="main">
         <div class="main-tags">
@@ -45,6 +46,7 @@
         <section class="main-images">
             @include('Images.index2')
             {{--@yield('image')--}}
+
         </section>
     </main>
     <section class="main-right">
