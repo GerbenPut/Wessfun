@@ -15,7 +15,8 @@ class ImagesTableSeeder extends Seeder
             'title' => 'My post',
             'description' => 'This is not a repost',
             'category' => 'Meme',
-            'url' => 'https://i.redditmedia.com/qCEwFXfLBg-WWkKH-jrGWryIBTZhqb8f1I1x5znADcE.jpg?fit=crop&crop=faces%2Centropy&arh=2&w=640&s=14742c9ae5873486d5c405e7f6108113',
+            'sort' => 'Photo',
+            'url' => 'https://pbs.twimg.com/profile_images/575890671350874112/lLhuNEZl_400x400.png',
         ]);
 
 //        factory(App\Image::class, 50)->create();

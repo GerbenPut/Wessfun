@@ -1,0 +1,42 @@
+
+.top-header{
+display: grid;
+}
+.main-div{
+
+}
+.main-left-category{
+  background: darkgreen;
+
+}
+
+.main-div{
+  display: grid;
+  grid-template-columns: 25% 45% 30%;
+}
+
+.main-images{
+}
+
+.main-image {
+   display: grid;
+   height: 200px;
+   width: auto;
+   justify-items: center;
+  p{
+
+  }
+ }
+
+.main-right {
+  background: darkblue;
+
+}
+
+.bottomfooter {
+  background: #0c5460;
+}
+.main-image {
+  background: red;
+}
+
