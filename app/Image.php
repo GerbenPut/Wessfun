@@ -4,6 +4,10 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class image extends Model
+class Image extends Model
 {
+    public function categories()
+    {
+        return $this->hasMany(Category::class);
+    }
 }
