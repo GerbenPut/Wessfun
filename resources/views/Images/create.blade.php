@@ -12,13 +12,13 @@
 </div>
 
 <div class="form-group">
-    {!! Form::label('url', 'Image-url'); !!}
-    {!! Form::text('url', '',array('class' => 'form-control'))!!}
+    {!! Form::label('sort', 'Sort'); !!}
+    {!! Form::select('sort', array( 'Photo' => 'Photo', 'Video' => 'Video (must be embed)'), 'S');!!}
 </div>
 
 <div class="form-group">
-    {!! Form::label('categories_id', 'Category'); !!}
-    {!! Form::select('category', array('Large' => 'Large', 'Small' => 'Small'), 'S');!!}
+    {!! Form::label('url', 'Image-url'); !!}
+    {!! Form::text('url', '',array('class' => 'form-control'))!!}
 </div>
 
 <div class="form-group">

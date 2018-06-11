@@ -40,8 +40,9 @@ class ImagesController extends Controller
         $image = new Image();
         $image->title = $request ['title'];
         $image->description = $request ['description'];
+        $image->sort = $request ['sort'];
         $image->url = $request ['url'];
-        $image->categories_id = $request ['category_id'];
+//        $image->categories_id = $request ['category_id'];
         $image->save();
 
         return redirect()->action('ImagesController@index')->with('correct', 'image toegevoegt');
@@ -83,6 +84,7 @@ class ImagesController extends Controller
         $image->title = $request ['title'];
         $image->description = $request ['description'];
         $image->category = $request ['category'];
+        $image->sort = $request ['sort'];
         $image->url = $request ['url'];
         $image->save();
 
