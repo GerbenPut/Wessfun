@@ -1,27 +1,46 @@
-{{--@extends('layouts.master2')--}}
+<head>
+    <link href="{{asset('scss/style.scss')}}" rel="stylesheet">
+</head>
 
-{{--@section('image')--}}
-
-<article class="main-article">
+<head>
+    <link href="{{asset('scss/style.scss')}}" rel="stylesheet">
+</head>
+@foreach ($images as $image)
+    <div class="articlemargin">
+    <article class="main-article">
         <header class="main-images-header">
             {{--Hier komt de titel en description van de media--}}
+            <td>{{$image->title}}</td>
         </header>
+
         <div class="main-image">
             {{--Hier komt de Gif/Image/video--}}
-            @foreach ($images as $image)
-            <img src="{{$image->url}}" style="height: 50%; width: auto">
-                    {{--{{$url = DB::table('images')->from ('images')->first());--}}
-                    {{--echo $url->url;}}--}}
-                        {{--@foreach ($image->categories as $category)--}}
-                                {{--<p>{{$category->category}}</p>--}}
-                        {{--@endforeach--}}
-                    <hr>
-            @endforeach
+            {{--<img src="{{$image->url}}" style="height: 50%; width: auto">--}}
+
+            @if($image->sort=='Video')
+                <video class="postimage" controls>
+                    <source src="{{$image->url}}" type="video/mp4">
+                    <source src="{{$image->url}}" type="video/ogg">
+                </video>
+            @else
+                <a class="imagelink" href="http://127.0.0.1:8000/images/{{$image->id}}"> <img class="postimage" src="{{$image->url}}" > </a>
+            @endif
 
         </div>
+
         <footer class="main-images-footer">
             {{--Hier komt het voten per media--}}
-
         </footer>
-</article>
-{{--@endsection--}}
+    </article>
+    @role('Admin', 'web')
+    <td><a href="{{URL::to('images/'.$image->id.'/edit')}}">
+            <button class="editbtn" type="submit">Edit</button>
+        </a></td>
+    <td>{{ Form::open(array('url' => 'images/'.$image->id)) }}
+        {{ Form::hidden('_method', 'DELETE') }}
+        {{ Form::submit('Delete', array('class' => 'deletebtn')) }}
+        {{ Form::close() }}
+    </td>
+    @endrole
+    </div>
+@endforeach

@@ -12,6 +12,11 @@
 </div>
 
 <div class="form-group">
+    {!! Form::label('category', 'Category'); !!}
+    {!! Form::select('category', array('Large' => 'Large', 'Small' => 'Small'), 'S');!!}
+</div>
+
+<div class="form-group">
     {!! Form::label('sort', 'Sort'); !!}
     {!! Form::select('sort', array( 'Photo' => 'Photo', 'Video' => 'Video (must be embed)'), 'S');!!}
 </div>
@@ -27,3 +32,12 @@
 </div>
 
 
+@if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif

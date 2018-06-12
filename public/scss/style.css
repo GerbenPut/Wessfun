@@ -1,0 +1,40 @@
+.top-header {
+  display: grid; }
+
+.main-div {
+  display: grid;
+  grid-template-columns: 25% 45% 30%; }
+
+.main-image {
+  display: grid;
+  height: 90%;
+  width: auto;
+  justify-items: center;
+  background: #e0e0e0;
+  margin: 5px;
+  padding: 20px;
+  border-radius: 10px; }
+
+.main-right {
+  background: darkblue; }
+
+.main-left-category {
+  background: darkgreen; }
+
+.bottomfooter {
+  background: #0c5460; }
+
+.main-images-header {
+  display: grid;
+  background: #e0e0e0;
+  justify-items: center;
+  height: 50px;
+  border-radius: 20px; }
+
+.main-article {
+  padding: 10px;
+  background-color: #333333;
+  border-radius: 20px;
+  margin-bottom: 50px; }
+
+/*# sourceMappingURL=style.css.map */

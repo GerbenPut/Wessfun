@@ -10,25 +10,14 @@
 
     <!-- Bootstrap core CSS -->
     <link href="{{asset('css/app.css')}}" rel="stylesheet">
-
+    <link href="{{asset('scss/style.scss')}}" rel="stylesheet">
     <!-- Custom styles for this template -->
-    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
-    <link href="{{asset('css/.css')}}" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
 </head>
 <body>
 {{--top-header start--}}
 <header class="top-header">
-    <a href="{{ url('/') }}">Home</a>
-    @if (Route::has('login'))
-        <div class="top-right links">
-            @auth
-                {{--<a href="{{ url('/home') }}">Home</a>--}}
-            @else
-                <a href="{{ route('login') }}">Login</a>
-                <a href="{{ route('register') }}">Register</a>
-            @endauth
-        </div>
-    @endif
+    @include('Layouts.app')
 </header>
 {{--top header ends--}}
 {{--main-div starts--}}
@@ -57,5 +46,13 @@
     {{--Hier komt ??--}}
     {{--Dit deel moet meebewegen als je scrolled--}}
 </footer>
+
 </body>
 </html>
+
+<audio style="position: fixed; bottom: 0%;   box-shadow: 0 0px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.50);   border-top-right-radius: 10px; " controls autoplay>
+    <source src="horse.ogg" type="audio/ogg">
+    <source src="https://instaud.io/_/2iXr.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+</audio>
+
