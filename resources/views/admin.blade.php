@@ -48,21 +48,21 @@
                             </table>
                         </div>
                         <div class="createform">
-                            {!! Form::open(['url' => 'categories', 'method' => 'POST']) !!}
+                            {!! Form::open(['url' => 'categories/'.$category->id , 'method' => 'PATCH']) !!}
                             {!! Form::token() !!}
 
                             <div class="form-group">
                                 {!! Form::label('category', 'category'); !!}
-                                {!! Form::text('category', '',['class' => 'form-control']) !!}
+                                {!! Form::text('category', $category->category ,array('class' => 'form-control'))!!}
                             </div>
 
                             <div class="form-group">
                                 {!! Form::label('description', 'description'); !!}
-                                {!! Form::textarea('description', '',['class' => 'form-control', 'rows' => '3']) !!}
+                                {!! Form::textarea('description', $category->description,array('class' => 'form-control', 'rows' => '3'))!!}
                             </div>
 
                             <div class="form-group">
-                                {!! Form::submit('Submit', ['class' => 'btn btn-default']); !!}
+                                {!! Form::submit('Submit', array('class' => 'btn btn-default')); !!}
                                 {!! Form::close() !!}
                             </div>
 
