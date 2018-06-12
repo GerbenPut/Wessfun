@@ -14,6 +14,7 @@ class CommentsTableSeeder extends Seeder
         DB::table('comments')->insert([
             'title' => 'hehe',
             'message' => 'xD',
+            'image_id' => '1',
         ]);
     }
 }

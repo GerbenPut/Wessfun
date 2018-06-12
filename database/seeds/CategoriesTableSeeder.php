@@ -14,7 +14,6 @@ class CategoriesTableSeeder extends Seeder
         DB::table('categories')->insert([
             'category' => 'idk',
             'description' => 'idk either',
-            'image_id' => '1',
         ]);
     }
 }
