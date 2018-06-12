@@ -2,9 +2,6 @@
     <link href="{{asset('scss/style.scss')}}" rel="stylesheet">
 </head>
 
-<head>
-    <link href="{{asset('scss/style.scss')}}" rel="stylesheet">
-</head>
 @foreach ($images as $image)
     <div class="articlemargin">
     <article class="main-article">

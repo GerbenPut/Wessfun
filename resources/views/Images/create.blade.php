@@ -12,11 +12,6 @@
 </div>
 
 <div class="form-group">
-    {!! Form::label('category', 'Category'); !!}
-    {!! Form::select('category', array('Large' => 'Large', 'Small' => 'Small'), 'S');!!}
-</div>
-
-<div class="form-group">
     {!! Form::label('sort', 'Sort'); !!}
     {!! Form::select('sort', array( 'Photo' => 'Photo', 'Video' => 'Video (must be embed)'), 'S');!!}
 </div>
