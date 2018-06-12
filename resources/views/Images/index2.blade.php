@@ -7,6 +7,7 @@
     <article class="main-article">
         <header class="main-images-header">
             {{--Hier komt de titel en description van de media--}}
+
             <td>{{$image->title}}</td>
         </header>
 

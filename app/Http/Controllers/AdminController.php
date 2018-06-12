@@ -12,6 +12,7 @@ class AdminController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
     public function index()
     {
         $categories = category::all()->take(10);
@@ -97,4 +98,5 @@ class AdminController extends Controller
         $category->delete();
         return redirect()->action('AdminController@index')->with('correct', 'category verwijderd');
     }
+
 }

@@ -17,6 +17,7 @@
 <body>
 {{--top-header start--}}
 <header class="top-header">
+
     @include('Layouts.app')
 </header>
 {{--top header ends--}}
@@ -34,7 +35,6 @@
         <section class="main-images">
             @include('Images.index2')
             {{--@yield('image')--}}
-
         </section>
     </main>
     <section class="main-right">
