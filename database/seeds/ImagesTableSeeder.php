@@ -14,7 +14,6 @@ class ImagesTableSeeder extends Seeder
         DB::table('images')->insert([
             'title' => 'My post',
             'description' => 'This is not a repost',
-            'category' => 'Meme',
             'sort' => 'Photo',
             'url' => 'https://pbs.twimg.com/profile_images/575890671350874112/lLhuNEZl_400x400.png',
         ]);

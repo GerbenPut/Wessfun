@@ -98,4 +98,14 @@ class CommentsController extends Controller
         $comment->delete();
         return redirect()->action('CommentsController@index')->with('correct', 'Comment Gedeletet');
     }
+
+    public function postSearch(Request $request)
+    {
+        if($request->has('query')) {
+            $comments = comment::where('title', 'LIKE', '%' . $request->get('query') .  '%')->get();
+            return view('comment.searchresults', compact('comments'));
+        } else {
+            return abort(400);
+        }
+    }
 }
