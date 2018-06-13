@@ -42,9 +42,12 @@ class CommentsController extends Controller
         $comment = new Comment();
         $comment->title = $request ['title'];
         $comment->message = $request['message'];
+        $comment->image_id = $request['image_id'];
         $comment->save();
 
-        return redirect()->action('CommentsController@index')->with('correct', 'Comment Gemaakt');
+//      return redirect()->action('ImagesController@index')->with('correct', 'Comment Gemaakt');
+        return back();
+
     }
 
     /**
@@ -82,6 +85,7 @@ class CommentsController extends Controller
 
         $comment->title = $request ['title'];
         $comment->message = $request['content'];
+        $comment->image_id = $request['image_id'];
         $comment->save();
 
         return redirect()->action('CommentsController@index')->with('correct', 'Comment Gewijzigd');
