@@ -15,8 +15,9 @@ class CommentsController extends Controller
      */
     public function index()
     {
-        $comments = Comment::all()->take(10);
-        return view('comment.index', compact('comments'));
+//        $comments = Comment::all()->take(10);
+//        return view('comment.index', compact('comments'));
+    return view ('comment.search');
     }
 
     /**
@@ -42,9 +43,12 @@ class CommentsController extends Controller
         $comment = new Comment();
         $comment->title = $request ['title'];
         $comment->message = $request['message'];
+        $comment->image_id = $request['image_id'];
         $comment->save();
 
-        return redirect()->action('CommentsController@index')->with('correct', 'Comment Gemaakt');
+//      return redirect()->action('ImagesController@index')->with('correct', 'Comment Gemaakt');
+        return back();
+
     }
 
     /**
@@ -82,6 +86,7 @@ class CommentsController extends Controller
 
         $comment->title = $request ['title'];
         $comment->message = $request['content'];
+        $comment->image_id = $request['image_id'];
         $comment->save();
 
         return redirect()->action('CommentsController@index')->with('correct', 'Comment Gewijzigd');
@@ -97,5 +102,15 @@ class CommentsController extends Controller
     {
         $comment->delete();
         return redirect()->action('CommentsController@index')->with('correct', 'Comment Gedeletet');
+    }
+
+    public function postSearch(Request $request)
+    {
+        if($request->has('query')) {
+            $comments = comment::where('title', 'LIKE', '%' . $request->get('query') .  '%')->get();
+            return view('comment.searchresults', compact('comments'));
+        } else {
+            return abort(400);
+        }
     }
 }

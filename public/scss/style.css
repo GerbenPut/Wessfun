@@ -1,40 +1,101 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);
+input, button, submit {
+  border: none; }
+
 .top-header {
+  position: fixed;
+  width: 100%;
+  z-index: 5;
   display: grid; }
 
 .main-div {
+  position: relative;
+  top: 50px; }
+
+.main-div {
   display: grid;
-  grid-template-columns: 25% 45% 30%; }
+  grid-template-columns: 25% 50% 25%; }
 
 .main-image {
   display: grid;
-  height: 90%;
-  width: auto;
-  justify-items: center;
-  background: #e0e0e0;
-  margin: 5px;
-  padding: 20px;
-  border-radius: 10px; }
+  height: 100%;
+  width: 100%;
+  justify-items: center; }
 
-.main-right {
-  background: darkblue; }
+.postimage {
+  width: 100%;
+  max-width: 100%;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px; }
 
-.main-left-category {
-  background: darkgreen; }
+.imagelink {
+  width: 100%; }
+
+.deletebtn {
+  box-shadow: 0 0px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
+  margin-right: 30%;
+  width: 20%;
+  padding: 1%;
+  border-bottom-right-radius: 10px;
+  float: right;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  opacity: 0.8;
+  transition: 0.3s; }
+
+.editbtn {
+  box-shadow: 0 0px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
+  margin-left: 30%;
+  width: 20%;
+  padding: 1%;
+  border-bottom-left-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  float: left;
+  opacity: 0.8;
+  transition: 0.3s; }
+
+.editbtn:hover {
+  opacity: 1; }
+
+.deletebtn:hover {
+  opacity: 1; }
 
 .bottomfooter {
   background: #0c5460; }
 
 .main-images-header {
-  display: grid;
-  background: #e0e0e0;
-  justify-items: center;
-  height: 50px;
-  border-radius: 20px; }
+  padding: .75rem 1.25rem;
+  margin-bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.5); }
 
 .main-article {
-  padding: 10px;
-  background-color: #333333;
-  border-radius: 20px;
-  margin-bottom: 50px; }
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  background-clip: border-box;
+  border-radius: 10px; }
+
+.articlemargin {
+  position: relative;
+  top: 50px;
+  text-align: center;
+  margin-bottom: 10%; }
+
+html {
+  font-family: sans-serif; }
+
+body {
+  font-family: Raleway, sans-serif;
+  font-size: .9rem;
+  font-weight: 400; }
 
 /*# sourceMappingURL=style.css.map */
