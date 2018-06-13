@@ -2,14 +2,12 @@
     <link href="{{asset('scss/style.scss')}}" rel="stylesheet">
 </head>
 
-<head>
-    <link href="{{asset('scss/style.scss')}}" rel="stylesheet">
-</head>
 @foreach ($images as $image)
     <div class="articlemargin">
     <article class="main-article">
         <header class="main-images-header">
             {{--Hier komt de titel en description van de media--}}
+
             <td>{{$image->title}}</td>
         </header>
 

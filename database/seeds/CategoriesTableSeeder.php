@@ -12,9 +12,8 @@ class CategoriesTableSeeder extends Seeder
     public function run()
     {
         DB::table('categories')->insert([
-            'category' => 'Funny',
-            'description' => 'Funny posts',
-            'image_id' => '1',
+            'category' => 'idk',
+            'description' => 'idk either',
         ]);
     }
 }

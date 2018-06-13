@@ -82,6 +82,7 @@ class ImagesController extends Controller
 
         $image->title = $request ['title'];
         $image->description = $request ['description'];
+        $image->sort = $request ['sort'];
         $image->url = $request ['url'];
         $image->save();
 

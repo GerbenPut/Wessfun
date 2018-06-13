@@ -19,6 +19,7 @@ class CreateImagesTable extends Migration
             $table->string('description');
             $table->string('sort');
             $table->string('url');
+//            $table->integer('category_id');
             $table->timestamps();
         });
     }

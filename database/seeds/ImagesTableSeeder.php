@@ -16,6 +16,7 @@ class ImagesTableSeeder extends Seeder
             'description' => 'This is not a repost',
             'sort' => 'Photo',
             'url' => 'https://pbs.twimg.com/profile_images/575890671350874112/lLhuNEZl_400x400.png',
+//            'category_id' => '1',
         ]);
 
 //        factory(App\Image::class, 50)->create();
