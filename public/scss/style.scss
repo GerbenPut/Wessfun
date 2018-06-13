@@ -108,6 +108,8 @@ input, button, submit {
 }
 
 .articlemargin {
+  position: relative;
+  top: 50px;
   text-align:center;
   margin-bottom: 10%;
 }
@@ -115,9 +117,8 @@ html {
   font-family: sans-serif;
 }
 body {
-  background-image: url("http://gdj.graphicdesignjunction.com/wp-content/uploads/2013/03/wood+pattern+texture+33.jpg");
+
   font-family: Raleway, sans-serif;
   font-size: .9rem;
   font-weight: 400;
-  background-color: #939393;
 }

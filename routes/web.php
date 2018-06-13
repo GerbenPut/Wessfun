@@ -43,9 +43,6 @@ Route::group(['middleware' => ['role:Admin']], function () {
     Route::get('/categories/{Category}/edit', 'AdminController@edit');
 });
 
-/* comments */
-Route::resource('/comment', 'CommentsController');
-Route::get('comment/{comment}/edit', 'CommentsController@edit');
 
 /* posts */
 Route::resource('/posts', 'PostsController');
@@ -55,4 +52,10 @@ Route::get('/posts/{Post}/edit', 'PostsController@edit');
 Route::resource('/images', 'ImagesController');
 Route::get('/images/{Image}/edit', 'ImagesController@edit');
 Route::get('/images/{Image}', 'ImagesController@show');
+
+Route::group(['middleware' => ['role:RegisteredUser|Admin']], function () {
+    Route::get('/images/create', 'ImagesController@create');
+    Route::get('/create', 'ImagesController@create');
+    Route::resource('/comment', 'CommentsController');
+});
 
