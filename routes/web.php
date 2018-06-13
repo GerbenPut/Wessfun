@@ -59,3 +59,4 @@ Route::group(['middleware' => ['role:RegisteredUser|Admin']], function () {
     Route::resource('/comment', 'CommentsController');
 });
 
+Route::post('/comment/search', 'CommentsController@postSearch')->middleware('auth')->name('comment.search');
