@@ -53,6 +53,12 @@ Route::resource('/images', 'ImagesController');
 Route::get('/images/{Image}/edit', 'ImagesController@edit');
 Route::get('/images/{Image}', 'ImagesController@show');
 
+/* Merch */
+Route::resource('/merch', 'MerchController');
+Route::get('/merch/{merch}/edit', 'MerchController@edit');
+Route::get('/merch/{merch}', 'MerchController@show');
+
+
 Route::group(['middleware' => ['role:RegisteredUser|Admin']], function () {
     Route::get('/images/create', 'ImagesController@create');
     Route::get('/create', 'ImagesController@create');

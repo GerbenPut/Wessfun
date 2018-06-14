@@ -44,7 +44,7 @@ class ImagesController extends Controller
         $image->url = $request ['url'];
         $image->save();
 
-        return redirect()->action('ImagesController@index')->with('correct', 'image toegevoegt');
+        return redirect()->action('ImagesController@index')->with('correct', 'image toegevoegd');
     }
 
     /**
