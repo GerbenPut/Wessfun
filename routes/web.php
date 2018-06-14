@@ -60,3 +60,6 @@ Route::group(['middleware' => ['role:RegisteredUser|Admin']], function () {
 });
 
 Route::post('/comment/search', 'CommentsController@postSearch')->middleware('auth')->name('comment.search');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
