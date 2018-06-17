@@ -28,7 +28,8 @@
             <a class="navbar-brand" href="{{ url('/') }}">
                 Wessfun
             </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
@@ -46,13 +47,14 @@
                         <li><a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a></li>
                     @else
                         <li class="nav-item dropdown">
-                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
+                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 {{ Auth::user()->name }} <span class="caret"></span>
                             </a>
 
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 @role('Admin', 'web')
-                                <a style="color: red;" class="dropdown-item" >RegisteredUser+</a>
+                                <a style="color: red;" class="dropdown-item">RegisteredUser+</a>
                                 @endrole
                                 <a class="dropdown-item" href="http://127.0.0.1:8000/create">Create post</a>
                                 <a class="dropdown-item" href="{{ route('logout') }}"
@@ -61,18 +63,20 @@
                                     {{ __('Logout') }}
                                 </a>
                                 @role('Admin', 'web')
-                                <a style="color: red;" class="dropdown-item" >Admin Only</a>
+                                <a style="color: red;" class="dropdown-item">Admin Only</a>
                                 <a class="dropdown-item" href="http://127.0.0.1:8000/comment">Comment page</a>
                                 <a class="dropdown-item" href="http://127.0.0.1:8000/admin">Admin page</a>
                                 <a class="dropdown-item" href="http://127.0.0.1:8000/categories">Categories page</a>
-                                <a class="dropdown-item" href="http://127.0.0.1:8000/advertisements">Advertisements page</a>
+                                <a class="dropdown-item" href="http://127.0.0.1:8000/advertisements">Advertisements
+                                    page</a>
                                 @else
                                     @endrole
 
 
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                    @csrf
-                                </form>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                          style="display: none;">
+                                        @csrf
+                                    </form>
                             </div>
                         </li>
                     @endguest
@@ -80,10 +84,9 @@
             </div>
         </div>
     </nav>
-
-    <main class="py-4">
+    <div>
         @yield('content')
-    </main>
+    </div>
 </div>
 </body>
 </html>

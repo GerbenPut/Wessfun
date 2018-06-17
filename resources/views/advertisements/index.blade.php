@@ -4,12 +4,12 @@
 
 @extends('layouts.app')
 @section('content')
+    <br><br>
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
                     <div class="card-header">advertisements</div>
-
                     <div class="card-body">
                         @if (session('status'))
                             <div class="alert alert-success">
@@ -29,11 +29,14 @@
                                 </tr>
                                 </thead>
                                 <tbody>
+
                                 @foreach ($advertisements as $advertisement)
                                     <tr>
 
                                         <th scope="row">{{$advertisement->id}}</th>
-                                        <td><a href="advertisements/{{$advertisement->id}}"> {{$advertisement->Company}}</a></td>
+                                        <td>
+                                            <a href="advertisements/{{$advertisement->id}}"> {{$advertisement->Company}}</a>
+                                        </td>
                                         <td style="max-width: 300px">{{$advertisement->URL}}</td>
                                         <td><a href="{{URL::to('advertisements/'.$advertisement->id.'/edit')}}">
                                                 <button class="backbutton" type="submit">Edit</button>
@@ -47,9 +50,28 @@
 
 
                                 @endforeach
-                                </tbody>
+
                             </table>
                         </div>
+                            <script>
+                                function myFunction() {
+                                    var input, filter, ul, li, a, i;
+                                    input = document.getElementById("myInput");
+                                    filter = input.value.toUpperCase();
+                                    ul = document.getElementById("myUL");
+                                    li = ul.getElementsByTagName("li");
+                                    for (i = 0; i < li.length; i++) {
+                                        a = li[i].getElementsByTagName("a")[0];
+                                        if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                                            li[i].style.display = "";
+                                        } else {
+                                            li[i].style.display = "none";
+
+                                        }
+                                    }
+                                }
+                            </script>
+                            </tbody>
                         <div class="createform">
                             {!! Form::open(['url' => 'advertisements', 'method' => 'POST']) !!}
                             {!! Form::token() !!}
@@ -70,7 +92,7 @@
                             </div>
 
                             <form action="http://127.0.0.1:8000/admin">
-                                <input class="backbutton" type="submit" value="Back" />
+                                <input class="backbutton" type="submit" value="Back"/>
                             </form>
 
                             @if ($errors->any())

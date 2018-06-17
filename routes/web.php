@@ -1,4 +1,4 @@
-<?php
+    <?php
 
 /*
 |--------------------------------------------------------------------------
@@ -44,7 +44,7 @@ Route::group(['middleware' => ['role:Admin']], function () {
     Route::resource('/categories', 'CategoryController')->except('show');;
     Route::get('/categories/{Category}/edit', 'CategoryController@edit');
 });
-Route::get('/categories/{category}', 'AdminController@show')->name('categories.show');
+Route::get('/categories/{category}', 'CategoryController@show')->name('categories.show');
 
 Route::resource('/tags', 'TagsController');
 Route::get('/tags/{Tag}/edit', 'TagsController@edit');
@@ -70,4 +70,5 @@ Route::group(['middleware' => ['role:RegisteredUser|Admin']], function () {
 
 Route::post('/comment/search', 'CommentsController@postSearch')->middleware('auth')->name('comment.search');
 
-Route::post('/tags/search', 'TagsController@postSearch')->middleware('auth')->name('tags.search');
+
+Route::post('/tags/search', 'TagsController@postSearch')->middleware('auth')->name('tags.index');

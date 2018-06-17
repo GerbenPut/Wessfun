@@ -51,9 +51,10 @@
 </footer>
 
 </body>
+@yield('scripts')
 </html>
 
-<audio class="musicplayer" style="position: fixed " controls autoplay>
+<audio class="musicplayer" style="position: fixed " controls>
     <source src="horse.ogg" type="audio/ogg">
     <source src="https://instaud.io/_/2iXr.mp3" type="audio/mpeg">
     Your browser does not support the audio element.

@@ -15,7 +15,7 @@ class TagsController extends Controller
      */
     public function index()
     {
-        return view ('tags.search');
+        return view ('tags.index');
     }
 
     /**
