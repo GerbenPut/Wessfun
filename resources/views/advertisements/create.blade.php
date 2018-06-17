@@ -2,17 +2,17 @@
 
 @section('content')
 
-    {!! Form::open(['url' => 'categories', 'method' => 'POST']) !!}
+    {!! Form::open(['url' => 'advertisements', 'method' => 'POST']) !!}
     {!! Form::token() !!}
 
     <div class="form-group">
-        {!! Form::label('category', 'category'); !!}
-        {!! Form::text('category', '',['class' => 'form-control']) !!}
+        {!! Form::label('Company', 'company'); !!}
+        {!! Form::text('company', '',['class' => 'form-control']) !!}
     </div>
 
     <div class="form-group">
-        {!! Form::label('description', 'description'); !!}
-        {!! Form::textarea('description', '',['class' => 'form-control', 'rows' => '3']) !!}
+        {!! Form::label('URL', 'url'); !!}
+        {!! Form::textarea('url', '',['class' => 'form-control', 'rows' => '3']) !!}
     </div>
 
     <div class="form-group">
@@ -20,7 +20,7 @@
         {!! Form::close() !!}
     </div>
 
-    <form action="http://127.0.0.1:8000/categories">
+    <form action="http://127.0.0.1:8000/advertisements">
         <input class="backbutton" type="submit" value="Back" />
     </form>
 

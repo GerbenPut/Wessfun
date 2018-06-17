@@ -5,7 +5,7 @@ use App\category;
 use App\Http\Requests\StoreCategoryPost;
 use Illuminate\Http\Request;
 
-class AdminController extends Controller
+class CategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +16,7 @@ class AdminController extends Controller
     public function index()
     {
         $categories = category::all()->take(10);
-        return view('admin', compact('categories'));
+        return view('category.index', compact('categories'));
     }
 
     /**
@@ -44,7 +44,7 @@ class AdminController extends Controller
         $category->description = $request ['description'];
         $category->save();
 
-        return redirect()->action('AdminController@index')->with('correct', 'category gemaakt');
+        return redirect()->action('CategoryController@index')->with('correct', 'category gemaakt');
     }
 
     /**
@@ -84,7 +84,7 @@ class AdminController extends Controller
         $category->description = $request ['description'];
         $category->save();
 
-        return redirect()->action('AdminController@index')->with('correct', 'category gewijzigd');
+        return redirect()->action('CategoryController@index')->with('correct', 'category gewijzigd');
     }
 
     /**
@@ -96,7 +96,7 @@ class AdminController extends Controller
     public function destroy(category $category)
     {
         $category->delete();
-        return redirect()->action('AdminController@index')->with('correct', 'category verwijderd');
+        return redirect()->action('CategoryController@index')->with('correct', 'category verwijderd');
     }
 
 }

@@ -73,9 +73,13 @@ input, button, submit {
   transition: 0.3s;
 }
 
-.editbtn:hover{opacity: 1}
+.editbtn:hover {
+  opacity: 1
+}
 
-.deletebtn:hover{opacity: 1}
+.deletebtn:hover {
+  opacity: 1
+}
 
 .main-left-category {
 
@@ -110,15 +114,55 @@ input, button, submit {
 .articlemargin {
   position: relative;
   top: 50px;
-  text-align:center;
+  text-align: center;
   margin-bottom: 10%;
 }
+
 html {
   font-family: sans-serif;
 }
+
 body {
 
   font-family: Raleway, sans-serif;
   font-size: .9rem;
   font-weight: 400;
+}
+
+.musicplayer {
+  bottom: 0%;
+  box-shadow: 0 0px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.50);
+  border-top-right-radius: 25px;
+  background-color: white;
+}
+
+.backbutton {
+  width: 100%;
+  float: left;
+  background-color: rgba(0, 0, 0, .8);
+  border: none;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  border-radius: 5px;
+  opacity: 0.8;
+  transition: 0.3s;
+  margin-bottom: 1%;
+}
+
+.backbutton:hover {
+  opacity: 1
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  text-decoration: none;
+  color: inherit;
 }

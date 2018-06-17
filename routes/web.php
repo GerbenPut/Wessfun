@@ -24,7 +24,9 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['middleware' => ['role:Admin']], function () {
-    Route::get('/admin', 'AdminController@index')->name('admin');
+    Route::get('/admin', function () {
+        return view('layouts.admin');
+    });
 });
 
 Route::get('/test', function (){
@@ -39,8 +41,8 @@ Route::get('/help', function () {
 /* CRUDS */
 /* Categories */
 Route::group(['middleware' => ['role:Admin']], function () {
-    Route::resource('/categories', 'AdminController')->except('show');
-    Route::get('/categories/{Category}/edit', 'AdminController@edit');
+    Route::resource('/categories', 'CategoryController')->except('show');;
+    Route::get('/categories/{Category}/edit', 'CategoryController@edit');
 });
 Route::get('/categories/{category}', 'AdminController@show')->name('categories.show');
 

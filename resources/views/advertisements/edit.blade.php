@@ -4,17 +4,17 @@
 </head>
 @section('content')
 
-    {!! Form::open(['url' => 'categories/'.$category->id , 'method' => 'PATCH']) !!}
+    {!! Form::open(['url' => 'advertisements/'.$advertisement->id , 'method' => 'PATCH']) !!}
     {!! Form::token() !!}
 
     <div class="form-group">
-        {!! Form::label('category', 'category'); !!}
-        {!! Form::text('category', $category->category ,array('class' => 'form-control'))!!}
+        {!! Form::label('Company', 'Company'); !!}
+        {!! Form::text('Company', $advertisement->Company ,array('class' => 'form-control'))!!}
     </div>
 
     <div class="form-group">
-        {!! Form::label('description', 'description'); !!}
-        {!! Form::textarea('description', $category->description,array('class' => 'form-control', 'rows' => '3'))!!}
+        {!! Form::label('URL', 'URL'); !!}
+        {!! Form::textarea('URL', $advertisement->URL,array('class' => 'form-control', 'rows' => '3'))!!}
     </div>
 
     <div class="form-group">
@@ -22,7 +22,7 @@
         {!! Form::close() !!}
     </div>
 
-    <form action="http://127.0.0.1:8000/categories">
+    <form action="http://127.0.0.1:8000/advertisements">
         <input class="backbutton" type="submit" value="Back" />
     </form>
 
@@ -35,5 +35,4 @@
             </ul>
         </div>
     @endif
-
 @endsection
