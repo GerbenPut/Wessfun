@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
 use App\Http\Requests\StoreImagePost;
 use App\Image;
+use App\User;
 use Illuminate\Http\Request;
 
 class ImagesController extends Controller
@@ -16,7 +18,8 @@ class ImagesController extends Controller
     public function index()
     {
         $images = image::all();
-        return view('layouts.master2', compact('images'));
+        $categories = category::all();
+        return view('layouts.master2', compact('images', 'categories'));
     }
 
     /**
@@ -53,9 +56,9 @@ class ImagesController extends Controller
      * @param  \App\Image  $image
      * @return \Illuminate\Http\Response
      */
-    public function show(Image $image)
+    public function show(Image $image, User $user)
     {
-        return view('Images.show', compact('image'));
+        return view('Images.show', compact('image', 'user'));
     }
 
     /**

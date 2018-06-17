@@ -1,12 +1,5 @@
 @extends('CommentLayouts.master')
 @section('content')
-    <!--@foreach($comments as $comment)
-        <div class="comment-post">
-            <h2 class="comment-post-title">{{ $comment->titel }}</h2>
-            <p class="comment-post-meta">December 23,2013</p>
-            <p> {{$comment->content}}</p>
-        </div>
-        @endforeach-->
         <a href="http://127.0.0.1:8000">Home</a>
         <table class="table">
             <thead>

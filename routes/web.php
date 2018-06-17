@@ -39,10 +39,13 @@ Route::get('/help', function () {
 /* CRUDS */
 /* Categories */
 Route::group(['middleware' => ['role:Admin']], function () {
-    Route::resource('/categories', 'AdminController');
+    Route::resource('/categories', 'AdminController')->except('show');
     Route::get('/categories/{Category}/edit', 'AdminController@edit');
 });
+Route::get('/categories/{category}', 'AdminController@show')->name('categories.show');
 
+Route::resource('/tags', 'TagsController');
+Route::get('/tags/{Tag}/edit', 'TagsController@edit');
 
 /* posts */
 Route::resource('/posts', 'PostsController');
@@ -60,3 +63,5 @@ Route::group(['middleware' => ['role:RegisteredUser|Admin']], function () {
 });
 
 Route::post('/comment/search', 'CommentsController@postSearch')->middleware('auth')->name('comment.search');
+
+Route::post('/tags/search', 'TagsController@postSearch')->middleware('auth')->name('tags.search');

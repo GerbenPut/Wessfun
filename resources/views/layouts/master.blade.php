@@ -47,4 +47,5 @@
     </text>
 </svg>
 </body>
+@yield('scripts')
 </html>

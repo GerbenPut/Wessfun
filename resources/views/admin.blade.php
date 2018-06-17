@@ -28,7 +28,6 @@
                                 <tbody>
                                 @foreach ($categories as $category)
                                     <tr>
-
                                         <th scope="row">{{$category->id}}</th>
                                         <td><a href="categories/{{$category->id}}"> {{$category->category}}</a></td>
                                         <td>{{$category->description}}</td>

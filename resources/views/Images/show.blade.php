@@ -29,7 +29,7 @@
         </div>
     @endrole
 @foreach ($image->comments as $comment)
-    <h2>{{$comment->title}}</h2>
+    <h2>{{$comment->user->name}}</h2>
     <p>{{$comment->message}}</p>
 @endforeach
 

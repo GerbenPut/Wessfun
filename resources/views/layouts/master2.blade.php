@@ -26,6 +26,10 @@
     <section class="main-left-category">
         {{--Hier komen de categories--}}
         {{--Dit deel moet meebewegen als je scrolled--}}
+        @foreach ($categories as $category)
+            <a href="{{ route('categories.show', $category) }}">{{$category->category}}</a>
+            <br>
+        @endforeach
     </section>
     <main role="main">
         <div class="main-tags">

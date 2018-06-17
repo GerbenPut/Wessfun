@@ -6,14 +6,18 @@ use Illuminate\Database\Eloquent\Model;
 
 class Image extends Model
 {
-    public function categories()
+    public function category()
     {
-//        return $this->hasMany(Category::class);
         return $this->belongsTo(Category::class);
     }
 
     public function comments()
     {
         return $this->hasMany(Comment::class);
+    }
+
+    public function users()
+    {
+        return $this->belongsTo(User::class);
     }
 }

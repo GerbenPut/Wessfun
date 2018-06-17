@@ -28,8 +28,13 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-//    public function comments()
-//    {
-//        return $this->hasMany(Comment::class);
-//    }
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
+
+    public function images()
+    {
+        return $this->hasMany(Image::class);
+    }
 }
