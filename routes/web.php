@@ -16,7 +16,7 @@
 //
 //});
 
-Route::resource('/', 'ImagesController' );
+Route::resource('/', 'ImagesController');
 
 
 Auth::routes();
@@ -48,6 +48,10 @@ Route::get('/categories/{category}', 'AdminController@show')->name('categories.s
 
 Route::resource('/tags', 'TagsController');
 Route::get('/tags/{Tag}/edit', 'TagsController@edit');
+Route::group(['middleware' => ['role:Admin']], function () {
+    Route::resource('/advertisements', 'AdvertisementsController');
+    Route::get('/advertisements/{Advertisement}/edit', 'AdvertisementsController@edit');
+});
 
 /* posts */
 Route::resource('/posts', 'PostsController');

@@ -51,18 +51,21 @@
                             </a>
 
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                @role('Admin', 'web')
+                                <a style="color: red;" class="dropdown-item" >RegisteredUser+</a>
+                                @endrole
                                 <a class="dropdown-item" href="http://127.0.0.1:8000/create">Create post</a>
-                                <a class="dropdown-item" href="http://127.0.0.1:8000/comment">Comment page</a>
                                 <a class="dropdown-item" href="{{ route('logout') }}"
                                    onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                     {{ __('Logout') }}
                                 </a>
-                                @role('RegisteredUser', 'web')
-
-                                @endrole
                                 @role('Admin', 'web')
+                                <a style="color: red;" class="dropdown-item" >Admin Only</a>
+                                <a class="dropdown-item" href="http://127.0.0.1:8000/comment">Comment page</a>
+                                <a class="dropdown-item" href="http://127.0.0.1:8000/admin">Admin page</a>
                                 <a class="dropdown-item" href="http://127.0.0.1:8000/categories">Categories page</a>
+                                <a class="dropdown-item" href="http://127.0.0.1:8000/advertisements">Advertisements page</a>
                                 @else
                                     @endrole
 
