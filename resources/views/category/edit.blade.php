@@ -25,7 +25,7 @@
     <form action="http://127.0.0.1:8000/categories">
         <input class="backbutton" type="submit" value="Back" />
     </form>
-
+    <a href="http://127.0.0.1:8000/category">Back to category</a>
     @if ($errors->any())
         <div>
             <ul>

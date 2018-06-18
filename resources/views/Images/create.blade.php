@@ -25,7 +25,7 @@
     {!! Form::submit('Submit', array('class' => 'btn btn-default')); !!}
     {!! Form::close() !!}
 </div>
-
+<a href="http://127.0.0.1:8000">Back to home</a>
 
 @if ($errors->any())
     <div class="alert alert-danger">
