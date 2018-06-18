@@ -22,6 +22,11 @@
 </div>
 
 <div class="form-group">
+    {!! Form::label('category_id', 'Category') !!}
+    {!! Form::select('category_id', $categories);!!}
+</div>
+
+<div class="form-group">
     {!! Form::submit('Submit', array('class' => 'btn btn-default')); !!}
     {!! Form::close() !!}
 </div>

@@ -28,7 +28,7 @@ class StoreImagePost extends FormRequest
             'description' => 'required',
             'sort' => 'required',
             'url' => 'required',
-
+            'category_id' => 'required|numeric'
         ];
     }
 }
