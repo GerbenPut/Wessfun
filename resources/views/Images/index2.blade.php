@@ -2,7 +2,7 @@
     <link href="{{asset('scss/style.scss')}}" rel="stylesheet">
 </head>
 
-@foreach ($images as $image)
+@foreach ($images->reverse()  as $image)
     @if($image->category_id=='3')
 
     @else
