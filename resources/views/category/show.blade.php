@@ -10,7 +10,9 @@
                     <header class="main-images-header">
                         {{--Hier komt de titel en description van de media--}}
 
-                        <td>{{$image->title}}</td>
+                        <a class="imagelink" href="http://127.0.0.1:8000/images/{{$image->id}}">
+                            <td>{{$image->title}}</td>
+                        </a>
                     </header>
 
                     <div class="main-image">

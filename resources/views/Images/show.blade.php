@@ -1,7 +1,14 @@
 <div class="blog-post">
         <h2 class="blog-post-title">{{$image->title}}</h2>
         <p>{{$image->description}}</p>
-        <img src="{{$image->url}}" style="height: 50%; width: auto">
+    @if($image->sort=='Video')
+        <video class="postimage" controls>
+            <source src="{{$image->url}}" type="video/mp4">
+            <source src="{{$image->url}}" type="video/ogg">
+        </video>
+    @else
+        <img class="postimage" src="{{$image->url}}" >
+    @endif
 </div>
 <a href="http://127.0.0.1:8000/">Back to home</a>
 <h1>Comments</h1>

@@ -16,8 +16,10 @@
 <body>
 {{--top-header start--}}
 <header class="top-header">
-
     @include('Layouts.app')
+    <form action="http://127.0.0.1:8000/create">
+        <input class="createbutton" type="submit" value="Create Post"/>
+    </form>
 </header>
 {{--top header ends--}}
 {{--main-div starts--}}
@@ -25,10 +27,23 @@
     <section class="main-left-category">
         {{--Hier komen de categories--}}
         {{--Dit deel moet meebewegen als je scrolled--}}
+        <header class="main-left-category-header">
+            <p>Categories</p>
+        </header>
         @foreach ($categories as $category)
-            <a href="{{ route('categories.show', $category) }}">{{$category->category}}</a>
-            <br>
+            @if($category->category=='NSFW')
+                <p class="category2">
+                    <a href="{{ route('categories.show', $category) }}">{{$category->category}}</a>
+                    <br>
+                </p>
+            @else
+                <p class="category">
+                    <a href="{{ route('categories.show', $category) }}">{{$category->category}}</a>
+                    <br>
+                </p>
+            @endif
         @endforeach
+
     </section>
     <main role="main">
         <div class="main-tags">
