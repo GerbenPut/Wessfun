@@ -1,17 +1,17 @@
+<table class="table">
+
+    <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Titel</th>
+        <th scope="col">Message</th>
+        <th scope="col">Edit</th>
+        <th scope="col">Delete</th>
+        <th> <a href="http://127.0.0.1:8000/comment/create">Comment create</a> </th>
+        <th scope="col"></th>
+    </tr>
 @forelse($comments as $comment)
-    {{--<hr>--}}
 
-    {{--<div class="panel-body">--}}
-        {{--<h3>--}}
-            {{--<b>--}}
-                {{--<a href="{{ route('comment.show', $comment) }}">--}}
-                    {{--{{ $comment->title }}--}}
-                {{--</a>--}}
-            {{--</b>--}}
-        {{--</h3>--}}
-        {{--<p>{{ $comment->message }}</p>--}}
-    {{--</div>--}}
-
+    <tr>
         <th scope="row">{{$comment->id}}</th>
         <td>{{ $comment->title }}</td>
         <td>{{$comment->message}}</td>
@@ -21,7 +21,9 @@
             {{ Form::submit('Delete', array('class' => 'btn btn-warning')) }}
             {{ Form::close() }}
         </td>
+    </tr>
 <br>
 @empty
     <span>No results</span>
 @endforelse
+        </table>
