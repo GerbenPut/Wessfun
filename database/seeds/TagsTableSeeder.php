@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class CommentsTableSeeder extends Seeder
+class TagsTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,11 +11,9 @@ class CommentsTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('comments')->insert([
+        DB::table('tags')->insert([
             'title' => 'hehe',
             'message' => 'xD',
-            'image_id' => '1',
-            'user_id' => '1',
         ]);
     }
 }

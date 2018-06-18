@@ -10,7 +10,6 @@
 
     <!-- Bootstrap core CSS -->
     <link href="{{asset('css/app.css')}}" rel="stylesheet">
-    <link href="{{asset('scss/style.scss')}}" rel="stylesheet">
     <!-- Custom styles for this template -->
     <link href="//fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
 </head>
@@ -26,6 +25,10 @@
     <section class="main-left-category">
         {{--Hier komen de categories--}}
         {{--Dit deel moet meebewegen als je scrolled--}}
+        @foreach ($categories as $category)
+            <a href="{{ route('categories.show', $category) }}">{{$category->category}}</a>
+            <br>
+        @endforeach
     </section>
     <main role="main">
         <div class="main-tags">
@@ -48,9 +51,10 @@
 </footer>
 
 </body>
+@yield('scripts')
 </html>
 
-<audio style="position: fixed; bottom: 0%;   box-shadow: 0 0px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.50);   border-top-right-radius: 10px; " controls autoplay>
+<audio class="musicplayer" style="position: fixed " controls>
     <source src="horse.ogg" type="audio/ogg">
     <source src="https://instaud.io/_/2iXr.mp3" type="audio/mpeg">
     Your browser does not support the audio element.

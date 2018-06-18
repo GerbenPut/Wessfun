@@ -1,11 +1,15 @@
-@extends('layouts.app')
+<head>
+    <link href="{{asset('scss/style.scss')}}" rel="stylesheet">
+</head>
 
+@extends('layouts.app')
 @section('content')
+    <br><br>
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">Categories</div>
+                    <div class="card-header">categories</div>
 
                     <div class="card-body">
                         @if (session('status'))
@@ -19,8 +23,8 @@
                                 <tr>
 
                                     <th scope="col">Nr</th>
-                                    <th scope="col">category</th>
-                                    <th scope="col">description</th>
+                                    <th scope="col">Category</th>
+                                    <th scope="col">Description</th>
                                     <th scope="col">Edit</th>
                                     <th scope="col">Delete</th>
                                 </tr>
@@ -28,16 +32,15 @@
                                 <tbody>
                                 @foreach ($categories as $category)
                                     <tr>
-
                                         <th scope="row">{{$category->id}}</th>
                                         <td><a href="categories/{{$category->id}}"> {{$category->category}}</a></td>
-                                        <td>{{$category->description}}</td>
+                                        <td style="max-width: 300px">{{$category->description}}</td>
                                         <td><a href="{{URL::to('categories/'.$category->id.'/edit')}}">
-                                                <button class="btn btn-primary" type="submit">Edit</button>
+                                                <button class="backbutton" type="submit">Edit</button>
                                             </a></td>
                                         <td>{{ Form::open(array('url' => 'categories/'.$category->id, 'class' => 'pull-right')) }}
                                             {{ Form::hidden('_method', 'DELETE') }}
-                                            {{ Form::submit('Delete', array('class' => 'btn btn-warning')) }}
+                                            {{ Form::submit('Delete', array('class' => 'backbutton')) }}
                                             {{ Form::close() }}
                                         </td>
                                     </tr>
@@ -52,7 +55,7 @@
                             {!! Form::token() !!}
 
                             <div class="form-group">
-                                {!! Form::label('category', 'category'); !!}
+                                {!! Form::label('Category', 'Category'); !!}
                                 {!! Form::text('category', '',['class' => 'form-control']) !!}
                             </div>
 
@@ -62,12 +65,16 @@
                             </div>
 
                             <div class="form-group">
-                                {!! Form::submit('Submit', ['class' => 'btn btn-default']); !!}
+                                {!! Form::submit('Submit', ['class' => 'backbutton']); !!}
                                 {!! Form::close() !!}
                             </div>
 
+                            <form action="http://127.0.0.1:8000/admin">
+                                <input class="backbutton" type="submit" value="Back" />
+                            </form>
+
                             @if ($errors->any())
-                                <div class="alert alert-danger">
+                                <div>
                                     <ul>
                                         @foreach ($errors->all() as $error)
                                             <li>{{ $error }}</li>
@@ -76,7 +83,6 @@
                                 </div>
                             @endif
                         </div>
-
                     </div>
                 </div>
             </div>

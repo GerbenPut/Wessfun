@@ -20,8 +20,12 @@
         {!! Form::close() !!}
     </div>
 
+    <form action="http://127.0.0.1:8000/categories">
+        <input class="backbutton" type="submit" value="Back" />
+    </form>
+
     @if ($errors->any())
-        <div class="alert alert-danger">
+        <div>
             <ul>
                 @foreach ($errors->all() as $error)
                     <li>{{ $error }}</li>

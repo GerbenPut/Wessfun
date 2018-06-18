@@ -1,4 +1,4 @@
-<?php
+    <?php
 
 /*
 |--------------------------------------------------------------------------
@@ -16,7 +16,7 @@
 //
 //});
 
-Route::resource('/', 'ImagesController' );
+Route::resource('/', 'ImagesController');
 
 
 Auth::routes();
@@ -24,7 +24,9 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['middleware' => ['role:Admin']], function () {
-    Route::get('/admin', 'AdminController@index')->name('admin');
+    Route::get('/admin', function () {
+        return view('layouts.admin');
+    });
 });
 
 Route::get('/test', function (){
@@ -39,10 +41,17 @@ Route::get('/help', function () {
 /* CRUDS */
 /* Categories */
 Route::group(['middleware' => ['role:Admin']], function () {
-    Route::resource('/categories', 'AdminController');
-    Route::get('/categories/{Category}/edit', 'AdminController@edit');
+    Route::resource('/categories', 'CategoryController')->except('show');;
+    Route::get('/categories/{Category}/edit', 'CategoryController@edit');
 });
+Route::get('/categories/{category}', 'CategoryController@show')->name('categories.show');
 
+Route::resource('/tags', 'TagsController');
+Route::get('/tags/{Tag}/edit', 'TagsController@edit');
+Route::group(['middleware' => ['role:Admin']], function () {
+    Route::resource('/advertisements', 'AdvertisementsController');
+    Route::get('/advertisements/{Advertisement}/edit', 'AdvertisementsController@edit');
+});
 
 /* posts */
 Route::resource('/posts', 'PostsController');
@@ -66,6 +75,6 @@ Route::group(['middleware' => ['role:RegisteredUser|Admin']], function () {
 });
 
 Route::post('/comment/search', 'CommentsController@postSearch')->middleware('auth')->name('comment.search');
-Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+
+Route::post('/tags/search', 'TagsController@postSearch')->middleware('auth')->name('tags.index');
