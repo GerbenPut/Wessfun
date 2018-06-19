@@ -56,6 +56,10 @@
                             </div>
 
                             <div class="form-group">
+                                {!! Form::hidden('image_id', '1') !!}
+                            </div>
+
+                            <div class="form-group">
                                 {!! Form::submit('Submit', ['class' => 'backbutton']); !!}
                                 {!! Form::close() !!}
                             </div>

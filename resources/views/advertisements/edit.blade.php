@@ -29,6 +29,10 @@
                                     </div>
 
                                     <div class="form-group">
+                                        {!! Form::hidden('image_id', $advertisement->image_id) !!}
+                                    </div>
+
+                                    <div class="form-group">
                                         {!! Form::submit('Submit', array('class' => 'backbutton')); !!}
                                         {!! Form::close() !!}
                                     </div>
