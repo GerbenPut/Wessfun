@@ -1,11 +1,4 @@
 <link href="{{asset('css/app.css')}}" rel="stylesheet">
-    <!--@foreach($merches as $merch)
-        <div class="merch-post">
-            <h2 class="merch-post-title">{{ $merch->titel }}</h2>
-            <p class="merch-post-meta">December 23,2013</p>
-            <p> {{$merch->content}}</p>
-        </div>
-        @endforeach-->
         <a href="http://127.0.0.1:8000">Home</a>
         <table class="table">
             <thead>

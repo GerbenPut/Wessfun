@@ -15,7 +15,7 @@ class AdvertisementsController extends Controller
 
     public function index()
     {
-        $advertisements = advertisement::all()->take(10);
+        $advertisements = advertisement::all();
         return view('advertisements.index', compact('advertisements'));
     }
     /**
