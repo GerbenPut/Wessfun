@@ -204,6 +204,22 @@ a:hover {
   border-radius: 10px;
 }
 
+.main-left-comment {
+  position: relative;
+  top: 50px;
+  width: 70%;
+  height: 100%;
+  margin: 0 auto;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.50);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  background-clip: border-box;
+  border-radius: 10px;
+}
+
 .main-left-category-header {
   width: 100%;
   padding: .25rem 1.25rem;
@@ -227,6 +243,20 @@ a:hover {
   font-family: Raleway, sans-serif;
   color: red;
 }
+
+.comment h2{
+  display: inline;
+  font-size: 2vh;
+  font-family: Raleway, sans-serif;
+}
+
+.comment p{
+  display: inline;
+  font-size: 2vh;
+  font-family: Raleway, sans-serif;
+  word-wrap: break-word;
+}
+
 .category a {
   /* webkit only for graceful degradation to IE */
   background: -webkit-repeating-linear-gradient(-45deg, #43cea2, #185a9d, #434343, #000000);
