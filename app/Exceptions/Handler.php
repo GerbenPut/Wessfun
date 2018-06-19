@@ -56,6 +56,7 @@ class Handler extends ExceptionHandler
     {
         if ($exception instanceof \Spatie\Permission\Exceptions\UnauthorizedException) {
             return response()->view('Errors.custom', [], 401);
+
         }
         return parent::render($request, $exception);
 

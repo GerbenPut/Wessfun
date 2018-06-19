@@ -98,4 +98,17 @@ class AdvertisementsController extends Controller
         return redirect()->action('AdvertisementsController@index')->with('correct', 'advertisement verwijderd');
     }
 
+    public function postSearch(Request $request)
+    {
+        if($request->has('query')) {
+            $advertisements = Advertisement::where('Company', 'LIKE', '%' . $request->get('query') .  '%')->get();
+            return view('advertisements.searchresults', compact('advertisements'));
+        } else {
+            return abort(400);
+        }
+
+    }
+    public function search(){
+        return view('advertisements.search');
+    }
 }

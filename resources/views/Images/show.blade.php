@@ -12,8 +12,9 @@
     <link href="{{asset('css/app.css')}}" rel="stylesheet">
     <!-- Custom styles for this template -->
     <link href="//fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 </head>
-<body>
+<body id="top-image">
 {{--top-header start--}}
 <header class="top-header">
     @include('Layouts.app')
@@ -37,10 +38,6 @@
             {!! Form::open(array('url' => 'comment/', 'method' => 'POST')) !!}
             {!! Form::token() !!}
 
-            <div class="form-group">
-                {!! Form::label('title', 'Title'); !!}
-                {!! Form::text('title', '', array('class' => 'form-control')) !!}
-            </div>
 
             <div class="form-group">
                 {!! Form::label('message', 'Message'); !!}
@@ -133,4 +130,17 @@
 @yield('scripts')
 </html>
 
-
+<script>
+    $(document).ready(function() {
+        var movementStrength = 25;
+        var height = movementStrength / $(window).height();
+        var width = movementStrength / $(window).width();
+        $("#top-image").mousemove(function(e){
+            var pageX = e.pageX - ($(window).width() / 2);
+            var pageY = e.pageY - ($(window).height() / 2);
+            var newvalueX = width * pageX * -1 - 25;
+            var newvalueY = height * pageY * -1 - 50;
+            $('#top-image').css("background-position", newvalueX+"px     "+newvalueY+"px");
+        });
+    });
+</script>

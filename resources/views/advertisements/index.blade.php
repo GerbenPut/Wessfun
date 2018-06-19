@@ -4,6 +4,7 @@
 
 @extends('layouts.app')
 @section('content')
+    <body id="top-image">
     <br><br>
     <div class="container">
         <div class="row justify-content-center">
@@ -16,6 +17,12 @@
                                 {{ session('status') }}
                             </div>
                         @endif
+
+                            <form action="{{ route('advertisements.search') }}" method="POST" class="ajaxSearch">
+                                <input type="search" name="query" placeholder="Type something to search" autocomplete="off">
+                                <input type="submit" value="Search">
+                            </form>
+
                         <div class="advertisementsindex">
                             <table class="table">
                                 <thead class="thead-dark">
@@ -27,24 +34,10 @@
                                     <th scope="col">Delete</th>
                                 </tr>
                                 </thead>
-                                <tbody>
-                                @foreach ($advertisements as $advertisement)
+                                <tbody id="results">
                                     <tr>
-                                        <th scope="row">{{$advertisement->id}}</th>
-                                        <td>
-                                            <a href="advertisements/{{$advertisement->id}}"> {{$advertisement->Company}}</a>
-                                        </td>
-                                        <td style="max-width: 300px">{{$advertisement->URL}}</td>
-                                        <td><a href="{{URL::to('advertisements/'.$advertisement->id.'/edit')}}">
-                                                <button class="backbutton" type="submit">Edit</button>
-                                            </a></td>
-                                        <td>{{ Form::open(array('url' => 'advertisements/'.$advertisement->id, 'class' => 'pull-right')) }}
-                                            {{ Form::hidden('_method', 'DELETE') }}
-                                            {{ Form::submit('Delete', array('class' => 'backbutton')) }}
-                                            {{ Form::close() }}
-                                        </td>
+                                        <td colspan="5">Loading...</td>
                                     </tr>
-                                @endforeach
                                 </tbody>
                             </table>
                         </div>
@@ -86,6 +79,63 @@
             </div>
         </div>
     </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script>
+        var searchTimer = null;
+
+        $('body').on('submit', 'form.ajaxSearch', function (e) {
+            var form = $(this);
+
+            ajaxSearch(form);
+            return false;
+        });
+
+        $('body').on('keyup', 'form.ajaxSearch input[type=search]', function() {
+            var form = $(this).closest('form.ajaxSearch');
+
+            if(form) {
+                if(searchTimer !== null) clearInterval(searchTimer);
+
+                searchTimer = setTimeout(function() {
+                    ajaxSearch(form);
+                }, 800);
+            }
+        });
+
+        $(document).ready(function() {
+            ajaxSearch($('form.ajaxSearch'));
+        });
+
+        var ajaxSearch = function(form) {
+            $.ajax({
+                url: form.attr('action') + '/',
+                type: form.attr('method'),
+                method: form.attr('method'),
+                data: {"query": form.find('input[name=query]').val(), "_token": "{{ csrf_token() }}"}
+            }).done(function (res) {
+                $('#results').html(res);
+            }).fail(function (res) {
+                alert('Failed search');
+            });
+        }
+    </script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            var movementStrength = 25;
+            var height = movementStrength / $(window).height();
+            var width = movementStrength / $(window).width();
+            $("#top-image").mousemove(function(e){
+                var pageX = e.pageX - ($(window).width() / 2);
+                var pageY = e.pageY - ($(window).height() / 2);
+                var newvalueX = width * pageX * -1 - 25;
+                var newvalueY = height * pageY * -1 - 50;
+                $('#top-image').css("background-position", newvalueX+"px     "+newvalueY+"px");
+            });
+        });
+    </script>
+    </body>
 @endsection
 
 
