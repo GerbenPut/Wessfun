@@ -20,4 +20,9 @@ class Image extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public function advertisements()
+    {
+        return $this->hasMany(Advertisement::class);
+    }
 }

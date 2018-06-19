@@ -17,6 +17,7 @@ class CreateAdvertisementsTable extends Migration
             $table->increments('id');
             $table->string('Company', 250);
             $table->text('URL');
+            $table->integer('image_id');
             $table->timestamps();
         });
     }

@@ -41,6 +41,7 @@ class AdvertisementsController extends Controller
         $advertisement = new advertisement();
         $advertisement->company = $request ['Company'];
         $advertisement->URL = $request ['URL'];
+        $advertisement->image_id = $request['image_id'];
         $advertisement->save();
 
         return redirect()->action('AdvertisementsController@index')->with('correct', 'advertisement gemaakt');
@@ -81,6 +82,7 @@ class AdvertisementsController extends Controller
 
         $advertisement->company = $request ['Company'];
         $advertisement->url = $request ['URL'];
+        $advertisement->image_id = $request['image_id'];
         $advertisement->save();
 
         return redirect()->action('AdvertisementsController@index')->with('correct', 'advertisement gewijzigd');
