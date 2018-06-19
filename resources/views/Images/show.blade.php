@@ -58,7 +58,7 @@
             @endrole
         </div>
         <div class="comment">
-            @foreach ($image->comments as $comment)
+            @foreach ($image->comments->reverse() as $comment)
                 <hr>
                 <h2>{{$comment->user->name}}:</h2>
                 <p>{{$comment->message}}</p>

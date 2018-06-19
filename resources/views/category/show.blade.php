@@ -56,7 +56,7 @@
         </div>
         <section class="main-images">
             <div>
-                @foreach($category->images as $image)
+                @foreach($category->images->reverse() as $image)
                     <div class="articlemargin">
                         <article class="main-article">
                             <header class="main-images-header">
