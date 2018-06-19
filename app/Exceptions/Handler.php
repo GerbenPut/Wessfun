@@ -55,10 +55,22 @@ class Handler extends ExceptionHandler
     public function render($request, Exception $exception)
     {
         if ($exception instanceof \Spatie\Permission\Exceptions\UnauthorizedException) {
-            return response()->view('Errors.custom', [], 404);
+            return response()->view('Errors.custom', [], 401);
 
         }
         return parent::render($request, $exception);
+
+    }
+
+    public function render2($request, Exception $e)
+    {
+
+        // 404 page with status code 200
+        if ($e instanceof ModelNotFoundException) {
+            return response()->view('errors.404', [], 404);
+        }
+
+        return parent::render2($request, $e);
 
     }
 }

@@ -14,6 +14,9 @@
     <link href="//fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
 </head>
 <body>
+<div>
+
+</div>
 {{--top-header start--}}
 <header class="top-header">
     @include('Layouts.app')
@@ -31,18 +34,18 @@
             <p>Categories</p>
         </header>
         <p>Joris fix dit ff</p>
-        {{--@foreach ($categories as $cate)--}}
-        {{--@if($cate->category=='NSFW')--}}
-        {{--<p class="category2">--}}
-        {{--<a href="{{ route('categories.show', $category) }}">{{$category->category}}</a>--}}
-        {{--<br>--}}
-        {{--</p>--}}
-        {{--@else--}}
-        {{--<p class="category">--}}
-        {{--<a href="{{ route('categories.show', $category) }}">{{$category->category}}</a>--}}
-        {{--<br>--}}
-        {{--</p>--}}
-        {{--@endif--}}
+        {{--@foreach ($categories as $category)--}}
+            {{--@if($category->category=='NSFW')--}}
+                {{--<p class="category2">--}}
+                    {{--<a href="{{ route('categories.show', $category) }}">{{$category->category}}</a>--}}
+                    {{--<br>--}}
+                {{--</p>--}}
+            {{--@else--}}
+                {{--<p class="category">--}}
+                    {{--<a href="{{ route('categories.show', $category) }}">{{$category->category}}</a>--}}
+                    {{--<br>--}}
+                {{--</p>--}}
+            {{--@endif--}}
         {{--@endforeach--}}
         <form action="http://127.0.0.1:8000">
             <input style="width: 80%; margin-left: 10%;" class="backbutton" type="submit" value="Back to homepage"/>
