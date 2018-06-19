@@ -9,6 +9,8 @@ use Illuminate\Support\Facades\Auth;
 
 class CommentsController extends Controller
 {
+
+
     /**
      * Display a listing of the resource.
      *
@@ -16,9 +18,9 @@ class CommentsController extends Controller
      */
     public function index()
     {
-//        $comments = Comment::all()->take(10);
-//        return view('comment.index', compact('comments'));
-    return view ('comment.search');
+     // $comments = Comment::all()->take(10);
+     //   return view('comment.index', compact('comments'));
+     return view ('comment.search');
     }
 
     /**
@@ -109,10 +111,11 @@ class CommentsController extends Controller
     public function postSearch(Request $request)
     {
         if($request->has('query')) {
-            $comments = comment::where('title', 'LIKE', '%' . $request->get('query') .  '%')->get();
+            $comments = comment::where('message', 'LIKE', '%' . $request->get('query') .  '%')->get();
             return view('comment.searchresults', compact('comments'));
         } else {
             return abort(400);
         }
+
     }
 }

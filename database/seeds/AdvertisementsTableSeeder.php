@@ -19,5 +19,6 @@ class AdvertisementsTableSeeder extends Seeder
             'Company' => 'CyberGhost',
             'URL' => 'https://tpc.googlesyndication.com/simgad/5999084540335731940',
         ]);
+        factory(App\Advertisement::class, 5)->create();
     }
 }

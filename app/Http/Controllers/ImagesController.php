@@ -7,6 +7,7 @@ use App\Http\Requests\StoreImagePost;
 use App\Image;
 use App\User;
 use Illuminate\Http\Request;
+use Auth;
 
 class ImagesController extends Controller
 {
@@ -29,7 +30,11 @@ class ImagesController extends Controller
      */
     public function create()
     {
-        return view('Images.create');
+        $categories = [];
+
+        foreach (Category::all() as $cat) $categories[$cat->id] = $cat->category;
+
+        return view('Images.create', compact( 'categories'));
     }
 
     /**
@@ -40,14 +45,21 @@ class ImagesController extends Controller
      */
     public function store(StoreImagePost $request)
     {
-        $image = new Image();
-        $image->title = $request ['title'];
-        $image->description = $request ['description'];
-        $image->sort = $request ['sort'];
-        $image->url = $request ['url'];
-        $image->save();
+        if($cat = Category::find($request->get('category_id'))) {
+            $image = new Image();
+            $image->title = $request ['title'];
+            $image->description = $request ['description'];
+            $image->sort = $request ['sort'];
+            $image->url = $request ['url'];
+            $image->user_id = Auth::user()->id;
+            $image->category_id = $cat->id;
+            $image->save();
+        } else {
+            return redirect()->back()->withErrors(['category_id' => ['Invalid id']]);
+        }
 
-        return redirect()->action('ImagesController@index')->with('correct', 'image toegevoegt');
+
+        return redirect()->action('ImagesController@index')->with('correct', 'image toegevoegd');
     }
 
     /**
@@ -69,7 +81,11 @@ class ImagesController extends Controller
      */
     public function edit(Image $image)
     {
-        return view('Images.edit', compact('image'));
+        $categories = [];
+
+        foreach (Category::all() as $cat) $categories[$cat->id] = $cat->category;
+
+        return view('Images.edit', compact('image', 'categories'));
     }
 
     /**
@@ -79,17 +95,21 @@ class ImagesController extends Controller
      * @param  \App\Image  $image
      * @return \Illuminate\Http\Response
      */
-    public function update(StoreImagePost $request, Image $image)
+    public function update(StoreImagePost $request, image $image)
     {
-        $validatedDate = $request->validated();
+        if($cat = Category::find($request->get('category_id'))) {
+            $image->title = $request ['title'];
+            $image->description = $request ['description'];
+            $image->sort = $request ['sort'];
+            $image->url = $request ['url'];
+            $image->user_id = Auth::user()->id;
+            $image->category_id = $cat->id;
+            $image->save();
+        } else {
+            return redirect()->back()->withErrors(['category_id' => ['Invalid id']]);
+        }
 
-        $image->title = $request ['title'];
-        $image->description = $request ['description'];
-        $image->sort = $request ['sort'];
-        $image->url = $request ['url'];
-        $image->save();
-
-        return redirect()->action('ImagesController@index')->with('correct', 'image gewijzigt');
+        return redirect()->action('ImagesController@index')->with('correct', 'image gewijzigd');
     }
 
     /**

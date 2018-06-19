@@ -4,12 +4,12 @@
 
 @extends('layouts.app')
 @section('content')
+    <br><br>
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
                     <div class="card-header">advertisements</div>
-
                     <div class="card-body">
                         @if (session('status'))
                             <div class="alert alert-success">
@@ -20,7 +20,6 @@
                             <table class="table">
                                 <thead class="thead-dark">
                                 <tr>
-
                                     <th scope="col">Nr</th>
                                     <th scope="col">Company</th>
                                     <th scope="col">Url</th>
@@ -31,9 +30,10 @@
                                 <tbody>
                                 @foreach ($advertisements as $advertisement)
                                     <tr>
-
                                         <th scope="row">{{$advertisement->id}}</th>
-                                        <td><a href="advertisements/{{$advertisement->id}}"> {{$advertisement->Company}}</a></td>
+                                        <td>
+                                            <a href="advertisements/{{$advertisement->id}}"> {{$advertisement->Company}}</a>
+                                        </td>
                                         <td style="max-width: 300px">{{$advertisement->URL}}</td>
                                         <td><a href="{{URL::to('advertisements/'.$advertisement->id.'/edit')}}">
                                                 <button class="backbutton" type="submit">Edit</button>
@@ -44,8 +44,6 @@
                                             {{ Form::close() }}
                                         </td>
                                     </tr>
-
-
                                 @endforeach
                                 </tbody>
                             </table>
@@ -70,7 +68,7 @@
                             </div>
 
                             <form action="http://127.0.0.1:8000/admin">
-                                <input class="backbutton" type="submit" value="Back" />
+                                <input class="backbutton" type="submit" value="Back"/>
                             </form>
 
                             @if ($errors->any())
@@ -89,4 +87,5 @@
         </div>
     </div>
 @endsection
+
 
