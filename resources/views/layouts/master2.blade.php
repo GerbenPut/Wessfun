@@ -13,7 +13,7 @@
     <!-- Custom styles for this template -->
     <link href="//fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
 </head>
-<body>
+<body id="top-image">
 {{--top-header start--}}
 <header class="top-header">
     @include('Layouts.app')
@@ -74,4 +74,18 @@
     <source src="https://instaud.io/_/2iXr.mp3" type="audio/mpeg">
     Your browser does not support the audio element.
 </audio>
-
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script>
+    $(document).ready(function() {
+        var movementStrength = 25;
+        var height = movementStrength / $(window).height();
+        var width = movementStrength / $(window).width();
+        $("#top-image").mousemove(function(e){
+            var pageX = e.pageX - ($(window).width() / 2);
+            var pageY = e.pageY - ($(window).height() / 2);
+            var newvalueX = width * pageX * -1 - 25;
+            var newvalueY = height * pageY * -1 - 50;
+            $('#top-image').css("background-position", newvalueX+"px     "+newvalueY+"px");
+        });
+    });
+</script>

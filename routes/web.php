@@ -1,4 +1,4 @@
-    <?php
+<?php
 
 /*
 |--------------------------------------------------------------------------
@@ -29,9 +29,9 @@ Route::group(['middleware' => ['role:Admin']], function () {
     });
 });
 
-Route::get('/test', function (){
-   \App\User::find(2)->assignRole('RegisteredUser');
-   \App\User::find(1)->assignRole('Admin');
+Route::get('/test', function () {
+    \App\User::find(2)->assignRole('RegisteredUser');
+    \App\User::find(1)->assignRole('Admin');
 });
 
 Route::get('/help', function () {
@@ -41,11 +41,22 @@ Route::get('/help', function () {
 /* CRUDS */
 /* Categories */
 Route::group(['middleware' => ['role:Admin']], function () {
-    Route::resource('/categories', 'CategoryController')->except('show');;
+    Route::resource('/categories', 'CategoryController')->except('show');
     Route::get('/categories/{Category}/edit', 'CategoryController@edit');
-    Route::resource('/comment', 'CommentsController');
+});
+
+/* comments */
+
+Route::group(['middleware' => ['role:RegisteredUser|Admin']], function () {
+    Route::resource('/comment', 'CommentsController')->except('delete','index');
+});
+
+Route::group(['middleware' => ['role:Admin']], function () {
+    Route::get('/comment/{Comment}/delete', 'CommentsController@delete')->name('comment.delete');
+    Route::get('/comment', 'CommentsController@index')->name('comment.index');
     Route::post('/comment/search', 'CommentsController@postSearch')->middleware('auth')->name('comment.search');
 });
+
 Route::get('/categories/{category}', 'CategoryController@show')->name('categories.show');
 
 /* tags */
@@ -80,3 +91,4 @@ Route::group(['middleware' => ['role:RegisteredUser|Admin']], function () {
 
 
 Route::post('/tags/search', 'TagsController@postSearch')->middleware('auth')->name('tags.index');
+Route::post('/advertisements/search', 'AdvertisementsController@postSearch')->name('advertisements.search');
