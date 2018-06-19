@@ -20,7 +20,6 @@
                             <table class="table">
                                 <thead class="thead-dark">
                                 <tr>
-
                                     <th scope="col">Nr</th>
                                     <th scope="col">Company</th>
                                     <th scope="col">Url</th>
@@ -29,10 +28,8 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-
                                 @foreach ($advertisements as $advertisement)
                                     <tr>
-
                                         <th scope="row">{{$advertisement->id}}</th>
                                         <td>
                                             <a href="advertisements/{{$advertisement->id}}"> {{$advertisement->Company}}</a>
@@ -47,31 +44,10 @@
                                             {{ Form::close() }}
                                         </td>
                                     </tr>
-
-
                                 @endforeach
-
+                                </tbody>
                             </table>
                         </div>
-                            <script>
-                                function myFunction() {
-                                    var input, filter, ul, li, a, i;
-                                    input = document.getElementById("myInput");
-                                    filter = input.value.toUpperCase();
-                                    ul = document.getElementById("myUL");
-                                    li = ul.getElementsByTagName("li");
-                                    for (i = 0; i < li.length; i++) {
-                                        a = li[i].getElementsByTagName("a")[0];
-                                        if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
-                                            li[i].style.display = "";
-                                        } else {
-                                            li[i].style.display = "none";
-
-                                        }
-                                    }
-                                }
-                            </script>
-                            </tbody>
                         <div class="createform">
                             {!! Form::open(['url' => 'advertisements', 'method' => 'POST']) !!}
                             {!! Form::token() !!}
@@ -111,4 +87,5 @@
         </div>
     </div>
 @endsection
+
 
