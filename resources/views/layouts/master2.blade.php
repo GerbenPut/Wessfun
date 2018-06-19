@@ -52,11 +52,13 @@
         </div>
         <section class="main-images">
             @include('Images.index2')
+
             {{--@yield('image')--}}
         </section>
     </main>
     <section class="main-right">
         {{--Hier komt reclame???--}}
+
     </section>
 </div>
 {{--main-div ends--}}

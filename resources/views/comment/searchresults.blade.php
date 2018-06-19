@@ -1,5 +1,4 @@
 <table class="table">
-
     <tr>
         <th scope="col">Id</th>
         <th scope="col">Message</th>
@@ -8,7 +7,6 @@
         <th scope="col"></th>
     </tr>
 @forelse($comments as $comment)
-
     <tr>
         <th scope="row">{{$comment->id}}</th>
         <td>{{$comment->message}}</td>
