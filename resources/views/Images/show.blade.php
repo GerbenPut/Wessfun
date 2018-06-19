@@ -112,11 +112,6 @@
                     </td>
                     @endrole
                 </div>
-
-
-                <a href="http://127.0.0.1:8000/">Back to home</a>
-                <h1>Comments</h1>
-
             </div>
             {{--@yield('image')--}}
         </section>

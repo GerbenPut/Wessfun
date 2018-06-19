@@ -30,20 +30,19 @@
         <header class="main-left-category-header">
             <p>Categories</p>
         </header>
-        <p>Joris fix dit ff</p>
-        {{--@foreach ($categories as $cate)--}}
-        {{--@if($cate->category=='NSFW')--}}
-        {{--<p class="category2">--}}
-        {{--<a href="{{ route('categories.show', $category) }}">{{$category->category}}</a>--}}
-        {{--<br>--}}
-        {{--</p>--}}
-        {{--@else--}}
-        {{--<p class="category">--}}
-        {{--<a href="{{ route('categories.show', $category) }}">{{$category->category}}</a>--}}
-        {{--<br>--}}
-        {{--</p>--}}
-        {{--@endif--}}
-        {{--@endforeach--}}
+        @foreach ($categories as $kaas)
+            @if($kaas->category=='NSFW(18+)')
+                <p class="category2">
+                    <a href="{{ route('categories.show', $kaas) }}">{{$kaas->category}}</a>
+                    <br>
+                </p>
+            @else
+                <p class="category">
+                    <a href="{{ route('categories.show', $kaas) }}">{{$kaas->category}}</a>
+                    <br>
+                </p>
+            @endif
+        @endforeach
         <form action="http://127.0.0.1:8000">
             <input style="width: 80%; margin-left: 10%;" class="backbutton" type="submit" value="Back to homepage"/>
         </form>
