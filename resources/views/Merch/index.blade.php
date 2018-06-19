@@ -1,5 +1,6 @@
 <link href="{{asset('css/app.css')}}" rel="stylesheet">
         <a href="http://127.0.0.1:8000">Home</a>
+<link href="{{asset('scss/style.scss')}}" rel="stylesheet">
         <table class="table">
             <thead>
             <tr>

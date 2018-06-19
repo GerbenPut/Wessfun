@@ -5,10 +5,7 @@
     {!! Form::open(array('url' => 'comment/'.$comment->id, 'method' => 'PATCH')) !!}
     {!! Form::token() !!}
 
-    <div class="form-group">
-        {!! Form::label('title', 'Titel'); !!}
-        {!! Form::text('title', $comment->title, array('class' => 'form-control')) !!}
-    </div>
+
 
     <div class="form-group">
         {!! Form::textarea('content', $comment->message, array('class' => 'form-control', 'rows'=> '5')); !!}

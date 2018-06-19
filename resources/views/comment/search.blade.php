@@ -9,30 +9,9 @@
         <input type="submit" value="Search">
     </form>
 
-    <table class="table">
-        <thead>
-        <tr>
-            <th scope="col">Id</th>
-            <th scope="col">Titel</th>
-            <th scope="col">Message</th>
-            <th scope="col">Edit</th>
-            <th scope="col">Delete</th>
-            <th> <a href="http://127.0.0.1:8000/comment/create">Comment create</a> </th>
-            <th scope="col"></th>
-        </tr>
-        </thead>
-        <tbody>
-
-        {{--<div id="results">--}}
-            {{--<span>Loading...</span>--}}
-        {{--</div>--}}
-        <tr id="results">
-
-        </tr>
-
-        </tbody>
-
-    </table>
+        <div id="results">
+            <span>Loading...</span>
+        </div>
 
 </div>
 @endsection

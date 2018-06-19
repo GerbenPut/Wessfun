@@ -55,6 +55,7 @@ class CategoryController extends Controller
      */
     public function show(category $category)
     {
+
         return view('category.show', compact('category'));
     }
 

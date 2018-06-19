@@ -44,7 +44,6 @@ class CommentsController extends Controller
         $validatedData = $request->validated;
 
         $comment = new Comment();
-        $comment->title = $request ['title'];
         $comment->message = $request['message'];
         $comment->image_id = $request['image_id'];
         $comment->user_id = Auth::user()->id;
@@ -88,7 +87,6 @@ class CommentsController extends Controller
     {
         $validatedData = $request->validated;
 
-        $comment->title = $request ['title'];
         $comment->message = $request['content'];
         $comment->image_id = $request['image_id'];
         $comment->save();
