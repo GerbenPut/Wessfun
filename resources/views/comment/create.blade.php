@@ -5,14 +5,9 @@
     {!! Form::open(array('url' => 'comment/', 'method' => 'POST')) !!}
     {!! Form::token() !!}
 
-    <div class="form-group">
-        {!! Form::label('title', 'Title'); !!}
-        {!! Form::text('title', '', array('class' => 'form-control')) !!}
-    </div>
 
     <div class="form-group">
         {!! Form::textarea('message', '', array('class' => 'form-control', 'rows'=> '5')); !!}
-
     </div>
 
     <div class="form-group">

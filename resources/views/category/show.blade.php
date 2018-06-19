@@ -1,7 +1,8 @@
 @extends('Layouts.master')
-
 @section('content')
     <div class="blog-post">
+        <link href="{{asset('css/app.css')}}" rel="stylesheet">
+
         <h2 class="blog-post-title">{{$category->category}}</h2>
         <p>{{$category->description}}</p>
         @foreach($category->images as $image)
@@ -45,5 +46,6 @@
             </div>
         @endforeach
     </div>
+
 @endsection
 

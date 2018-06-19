@@ -12,8 +12,7 @@ class CommentsTableSeeder extends Seeder
     public function run()
     {
         DB::table('comments')->insert([
-            'title' => 'hehe',
-            'message' => 'xD',
+            'message' => 'Slechte post',
             'image_id' => '1',
             'user_id' => '1',
         ]);

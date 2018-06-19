@@ -2,18 +2,15 @@
 
     <tr>
         <th scope="col">Id</th>
-        <th scope="col">Titel</th>
         <th scope="col">Message</th>
         <th scope="col">Edit</th>
         <th scope="col">Delete</th>
-        <th> <a href="http://127.0.0.1:8000/comment/create">Comment create</a> </th>
         <th scope="col"></th>
     </tr>
 @forelse($comments as $comment)
 
     <tr>
         <th scope="row">{{$comment->id}}</th>
-        <td>{{ $comment->title }}</td>
         <td>{{$comment->message}}</td>
         <td><a href="{{URL::to('comment/'.$comment->id.'/edit')}}"><button class="btn btn-primary" type="submit">Edit</button></a></td>
         <td>{{ Form::open(array('url' => 'comment/'.$comment->id, 'class' => 'pull-right')) }}
