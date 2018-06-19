@@ -15,7 +15,7 @@ class MerchController extends Controller
      */
     public function index()
     {
-        $merches = merch::all()->take(0);
+        $merches = merch::all();
         return view('merch.index', compact('merches'));
     }
 
