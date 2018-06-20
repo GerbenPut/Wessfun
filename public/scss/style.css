@@ -10,7 +10,9 @@ input, button, submit {
 
 .main-div {
   position: relative;
-  top: 70px;
+  top: 70px; }
+
+.main-div {
   display: grid;
   grid-template-columns: 25% 50% 25%; }
 
@@ -51,8 +53,9 @@ input, button, submit {
   float: left;
   opacity: 0.8;
   transition: 0.3s; }
-  .editbtn :hover {
-    opacity: 1; }
+
+.editbtn:hover {
+  opacity: 1; }
 
 .deletebtn:hover {
   opacity: 1; }
@@ -138,8 +141,9 @@ body {
   border-bottom-right-radius: 5px;
   opacity: 0.8;
   transition: 0.3s; }
-  .createbutton :hover {
-    opacity: 1; }
+
+.createbutton:hover {
+  opacity: 1; }
 
 a {
   text-decoration: none;
