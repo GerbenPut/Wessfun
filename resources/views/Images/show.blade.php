@@ -34,7 +34,7 @@
 
 
         <div class="createcomment">
-            @role('Admin|RegisteredUser', 'web')
+            @role('RegisteredUser|Admin', 'web')
             {!! Form::open(array('url' => 'comment/', 'method' => 'POST')) !!}
             {!! Form::token() !!}
 

@@ -11,6 +11,8 @@ class CategoriesTableSeeder extends Seeder
      */
     public function run()
     {
+
+
         DB::table('categories')->insert([
             'category' => 'Funny',
             'description' => 'Funny images/videos',
@@ -23,5 +25,7 @@ class CategoriesTableSeeder extends Seeder
             'category' => 'NSFW (18+)',
             'description' => 'Adults only!',
         ]);
+
+        factory(App\Category::class, 5)->create();
     }
 }
