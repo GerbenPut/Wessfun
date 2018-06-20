@@ -103,9 +103,6 @@
             {{--@yield('image')--}}
         </section>
     </main>
-    <section class="main-right">
-        {{--Hier komt reclame???--}}
-    </section>
 </div>
 {{--main-div ends--}}
 <footer class="bottomfooter">
