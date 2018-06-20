@@ -31,7 +31,7 @@ class ImagesTableSeeder extends Seeder
             'title' => 'Legends never die...',
             'description' => 'WHEN THE WORLD IS CALLING YOUUUU!! YOU CAN HEAR THEM SCREAMING OUT YOUURRRRRRRRRRR NAMEEEEEEEEEEEEEEEEEE... LEGENDS NEVER DIEEEEEE',
             'sort' => 'Video',
-            'url' => 'https://cdn-b-east.streamable.com/video/mp4/ghba3.mp4?token=rdMqOFKCZfs00PUggWCRQw&expires=1529373474',
+            'url' => 'https://cdn-b-east.streamable.com/video/mp4/39xno.mp4?token=sg3Z6Vk-FFsLy5UcXtNEBw&expires=1529489569',
             'user_id' => '1',
             'category_id' => '1',
         ]);

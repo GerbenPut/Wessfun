@@ -25,7 +25,7 @@
 
                                     <div class="form-group">
                                         {!! Form::label('URL', 'URL'); !!}
-                                        {!! Form::textarea('URL', $advertisement->URL,array('class' => 'form-control', 'rows' => '3'))!!}
+                                        {!! Form::url('URL', $advertisement->URL,array('class' => 'form-control', 'rows' => '3'))!!}
                                     </div>
 
                                     <div class="form-group">
