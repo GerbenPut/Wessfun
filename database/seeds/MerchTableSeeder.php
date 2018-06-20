@@ -11,6 +11,6 @@ class MerchTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\Merch::class, 50)->create();
+        factory(App\Merch::class, 10)->create();
     }
 }
