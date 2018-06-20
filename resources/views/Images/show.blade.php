@@ -114,7 +114,7 @@
             {{--@yield('image')--}}
         </section>
         <form action="http://127.0.0.1:8000">
-            <input style="width: 50%; margin-left: 25%;" class="backbutton" type="submit" value="Back to homepage"/>
+            <input style="width: 50%; margin-left: 25%; margin-top: 5%;" class="backbutton" type="submit" value="Back to homepage"/>
         </form>
     </main>
     <section class="main-right">

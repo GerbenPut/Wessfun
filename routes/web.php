@@ -89,6 +89,9 @@ Route::group(['middleware' => ['role:RegisteredUser|Admin']], function () {
     Route::get('/create', 'ImagesController@create');
 });
 
+Route::get('/gradient', function () {
+    return view('layouts.gradient');
+});
 
 Route::post('/tags/search', 'TagsController@postSearch')->middleware('auth')->name('tags.index');
 Route::post('/advertisements/search', 'AdvertisementsController@postSearch')->name('advertisements.search');
