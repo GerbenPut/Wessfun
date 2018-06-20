@@ -26,24 +26,7 @@
 <div class="main-div">
     <section class="main-left-category">
         {{--Hier komen de categories--}}
-        {{--Dit deel moet meebewegen als je scrolled--}}
-        <header class="main-left-category-header">
-            <p>Categories</p>
-        </header>
-        @foreach ($categories as $category)
-            @if($category->category=='NSFW (18+)')
-                <p class="category2">
-                    <a href="{{ route('categories.show', $category) }}">{{$category->category}}</a>
-                    <br>
-                </p>
-            @else
-                <p class="category">
-                    <a href="{{ route('categories.show', $category) }}">{{$category->category}}</a>
-                    <br>
-                </p>
-            @endif
-        @endforeach
-
+        @include('Images.category')
     </section>
     <main role="main">
         <div class="main-tags">
@@ -57,15 +40,7 @@
     </main>
     <section class="main-right">
         {{--Hier komen de advertisements?--}}
-        <header class="main-right-header">
-            <p>Advertisements</p>
-        </header>
-        @foreach($images as $image)
-            @foreach ($image->advertisements as $advertisement)
-                {{--<h2>{{$advertisement->Company}}</h2>--}}
-                <img class="advertisement-url" src="{{$advertisement->URL}}">
-            @endforeach
-        @endforeach
+        @include('Images.advertisement')
     </section>
 </div>
 {{--main-div ends--}}

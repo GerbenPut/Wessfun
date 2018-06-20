@@ -39,7 +39,7 @@
 
                                     <div class="form-group">
                                         {!! Form::label('url', 'Url'); !!}
-                                        {!! Form::text('url', $image->url ,array('class' => 'form-control'))!!}
+                                        {!! Form::url('url', $image->url ,array('class' => 'form-control'))!!}
                                     </div>
 
                                     <div class="form-group">

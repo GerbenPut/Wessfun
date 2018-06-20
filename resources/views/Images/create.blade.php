@@ -34,7 +34,7 @@
 
                                     <div class="form-group">
                                         {!! Form::label('url', 'Image-url'); !!}
-                                        {!! Form::text('url', '',array('class' => 'form-control'))!!}
+                                        {!! Form::url('url', '',array('class' => 'form-control'))!!}
                                     </div>
 
                                     <div class="form-group">

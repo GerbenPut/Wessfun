@@ -52,7 +52,7 @@
 
                             <div class="form-group">
                                 {!! Form::label('URL', 'url'); !!}
-                                {!! Form::textarea('URL', '',['class' => 'form-control', 'rows' => '3']) !!}
+                                {!! Form::url('URL', '',['class' => 'form-control', 'rows' => '3']) !!}
                             </div>
 
                             <div class="form-group">
