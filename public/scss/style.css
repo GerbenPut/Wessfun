@@ -10,7 +10,7 @@ input, button, submit {
 
 .main-div {
   position: relative;
-  top: 50px; }
+  top: 70px; }
 
 .main-div {
   display: grid;
@@ -93,7 +93,7 @@ html {
   font-family: sans-serif; }
 
 body {
-  background-image: url("https://wallpaper-house.com/data/out/10/wallpaper2you_394566.jpg");
+  background-image: url("https://i.pinimg.com/originals/51/d6/81/51d6817f464288f5be2f5fe29c6ffb54.jpg");
   font-family: Raleway, sans-serif;
   font-size: .9rem;
   font-weight: 400; }
@@ -224,6 +224,39 @@ a:hover {
   text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.25);
   animation: animateTextBackground 5s ease-in-out infinite; }
 
+#scroll {
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  background-color: rgba(255, 255, 255, 0.7);
+  text-indent: -9999px;
+  display: none;
+  -webkit-border-radius: 60px;
+  -moz-border-radius: 60px;
+  border-radius: 60px;
+  z-index: 3; }
+
+#scroll span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -8px;
+  margin-top: -12px;
+  height: 0;
+  width: 0;
+  border: 8px solid transparent;
+  border-bottom-color: rgba(0, 0, 0, 0.8);
+  z-index: 3; }
+
+#scroll:hover {
+  background-color: white;
+  opacity: 1;
+  filter: "alpha(opacity=100)";
+  -ms-filter: "alpha(opacity=100)"; }
+
 @keyframes animateTextBackground {
   0% {
     background-position: 0 0; }
@@ -235,5 +268,38 @@ a:hover {
     background-position: 0 100%; }
   100% {
     background-position: 0 0; } }
+.main-right {
+  position: relative;
+  top: 50px;
+  width: 70%;
+  height: 85vh;
+  margin: 0 auto;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  background-clip: border-box;
+  border-radius: 10px; }
+
+.main-right-header {
+  width: 100%;
+  padding: .25rem 1.25rem;
+  margin-bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.5); }
+
+#content {
+  z-index: -1;
+  height: 100%;
+  background: -webkit-linear-gradient(270deg, #4ac1ff, #795bb0);
+  background: linear-gradient(180deg, #4ac1ff, #795bb0);
+  position: fixed;
+  width: 100%;
+  opacity: 1; }
 
 /*# sourceMappingURL=style.css.map */
