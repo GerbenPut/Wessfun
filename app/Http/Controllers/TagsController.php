@@ -15,7 +15,8 @@ class TagsController extends Controller
      */
     public function index()
     {
-        return view ('tags.index');
+        $tags = tag::all();
+        return view ('tags.index', compact('tags'));
     }
 
     /**
@@ -76,7 +77,7 @@ class TagsController extends Controller
      * @param  \App\tag $tag
      * @return \Illuminate\Http\Response
      */
-    public function update(StoretagPost $request, tag $tag)
+    public function update(StoreTagPost $request, tag $tag)
     {
         $validatedData = $request->validated;
 

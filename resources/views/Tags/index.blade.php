@@ -1,80 +1,137 @@
+<head>
+    <link href="{{asset('scss/style.scss')}}" rel="stylesheet">
+</head>
 
-@extends('Layouts.master')
+@extends('layouts.app')
 @section('content')
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <body id="top-image">
+    <br><br>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header">Tags</div>
 
-    <div class="card-body">
+                    <div class="card-body">
+                        @if (session('status'))
+                            <div class="alert alert-success">
+                                {{ session('status') }}
+                            </div>
+                        @endif
+                        <div class="categoriesindex">
+                            <table class="table">
+                                <thead class="thead-dark">
+                                <tr>
+                                    <th scope="col">Id</th>
+                                    <th scope="col">Titel</th>
+                                    <th scope="col">Message</th>
+                                    <th scope="col">Edit</th>
+                                    <th scope="col">Delete</th>
+                                    <th scope="col"></th>
+                                </tr>
+                                </thead>
+                                <tbody>
 
-        <form action="{{ route('tags.index') }}" method="POST" class="ajaxSearch">
-            <input type="search" name="query" placeholder="Type something to search" autocomplete="off">
-            <input type="submit" value="Search">
-        </form>
 
-        <table class="table">
-            <thead>
-            <tr>
-                <th scope="col">Id</th>
-                <th scope="col">Titel</th>
-                <th scope="col">Message</th>
-                <th scope="col">Edit</th>
-                <th scope="col">Delete</th>
-                <th> <a href="http://127.0.0.1:8000/tags/create">tag create</a> </th>
-                <th scope="col"></th>
-            </tr>
-            </thead>
-            <tbody>
+                                {{--<div id="results">--}}
+                                {{--<span>Loading...</span>--}}
+                                {{--</div>--}}
+                                @foreach($tags as $tag)
+                                    <tr>
+                                        <th scope="row">{{$tag->id}}</th>
+                                        <td>{{$tag->title }}</td>
+                                        <td>{{$tag->message}}</td>
+                                        <td><a href="{{URL::to('tags/'.$tag->id.'/edit')}}"><button class="backbutton" type="submit">Edit</button></a></td>
+                                        <td>{{ Form::open(array('url' => 'tags/'.$tag->id, 'class' => 'pull-right')) }}
+                                            {{ Form::hidden('_method', 'DELETE') }}
+                                            {{ Form::submit('Delete', array('class' => 'backbutton')) }}
+                                            {{ Form::close() }}
+                                        </td>
+                                    </tr>
+                                @endforeach
+                                </tbody>
 
-            {{--<div id="results">--}}
-            {{--<span>Loading...</span>--}}
-            {{--</div>--}}
-            <tr id="results">
+                            </table>
+                        </div>
 
-            </tr>
-            </tbody>
+                            <div class="createform">
+                                {!! Form::open(['url' => 'tags', 'method' => 'POST']) !!}
+                                {!! Form::token() !!}
 
-        </table>
+                                <div class="form-group">
+                                    {!! Form::label('Title', 'Title'); !!}
+                                    {!! Form::text('title', '',['class' => 'form-control']) !!}
+                                </div>
 
+                                <div class="form-group">
+                                    {!! Form::label('Message', 'Message'); !!}
+                                    {!! Form::textarea('message', '',['class' => 'form-control', 'rows' => '3']) !!}
+                                </div>
+
+                                <div class="form-group">
+                                    {!! Form::submit('Submit', ['class' => 'backbutton']); !!}
+                                    {!! Form::close() !!}
+                                </div>
+
+                                <form action="http://127.0.0.1:8000/admin">
+                                    <input class="backbutton" type="submit" value="Back"/>
+                                </form>
+
+                                @if ($errors->any())
+                                    <div>
+                                        <ul>
+                                            @foreach ($errors->all() as $error)
+                                                <li>{{ $error }}</li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
+                                @endif
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-@endsection
+                        @endsection
 
-@section('scripts')
-    <script>
-        var searchTimer = null;
+                        @section('scripts')
+                            <script>
+                                var searchTimer = null;
 
-        $('body').on('submit', 'form.ajaxSearch', function (e) {
-            var form = $(this);
+                                $('body').on('submit', 'form.ajaxSearch', function (e) {
+                                    var form = $(this);
 
-            ajaxSearch(form);
-            return false;
-        });
+                                    ajaxSearch(form);
+                                    return false;
+                                });
 
-        $('body').on('keyup', 'form.ajaxSearch input[type=search]', function() {
-            var form = $(this).closest('form.ajaxSearch');
+                                $('body').on('keyup', 'form.ajaxSearch input[type=search]', function() {
+                                    var form = $(this).closest('form.ajaxSearch');
 
-            if(form) {
-                if(searchTimer !== null) clearInterval(searchTimer);
+                                    if(form) {
+                                        if(searchTimer !== null) clearInterval(searchTimer);
 
-                searchTimer = setTimeout(function() {
-                    ajaxSearch(form);
-                }, 800);
-            }
-        });
+                                        searchTimer = setTimeout(function() {
+                                            ajaxSearch(form);
+                                        }, 800);
+                                    }
+                                });
 
-        $(document).ready(function() {
-            ajaxSearch($('form.ajaxSearch'));
-        });
+                                $(document).ready(function() {
+                                    ajaxSearch($('form.ajaxSearch'));
+                                });
 
-        var ajaxSearch = function(form) {
-            $.ajax({
-                url: form.attr('action') + '/',
-                type: form.attr('method'),
-                method: form.attr('method'),
-                data: {"query": form.find('input[name=query]').val(), "_token": "{{ csrf_token() }}"}
-            }).done(function (res) {
-                $('#results').html(res);
-            }).fail(function (res) {
-                alert('Failed search');
-            });
-        }
-    </script>
+                                var ajaxSearch = function(form) {
+                                    $.ajax({
+                                        url: form.attr('action') + '/',
+                                        type: form.attr('method'),
+                                        method: form.attr('method'),
+                                        data: {"query": form.find('input[name=query]').val(), "_token": "{{ csrf_token() }}"}
+                                    }).done(function (res) {
+                                        $('#results').html(res);
+                                    }).fail(function (res) {
+                                        alert('Failed search');
+                                    });
+                                }
+                            </script>
 @endsection

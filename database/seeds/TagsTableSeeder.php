@@ -12,8 +12,10 @@ class TagsTableSeeder extends Seeder
     public function run()
     {
         DB::table('tags')->insert([
-            'title' => 'hehe',
-            'message' => 'xD',
+            'title' => 'TagTitel',
+            'message' => 'Media Tags',
         ]);
+
+        factory(App\Tag::class, 5)->create();
     }
 }

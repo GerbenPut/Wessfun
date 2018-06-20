@@ -60,8 +60,10 @@ Route::group(['middleware' => ['role:Admin']], function () {
 Route::get('/categories/{category}', 'CategoryController@show')->name('categories.show');
 
 /* tags */
+Route::group(['middleware' => ['role:Admin']], function () {
 Route::resource('/tags', 'TagsController');
 Route::get('/tags/{Tag}/edit', 'TagsController@edit');
+});
 
 /* advertisements */
 Route::group(['middleware' => ['role:Admin']], function () {
