@@ -32,7 +32,7 @@
             <p>Categories</p>
         </header>
         @foreach ($categories as $kaas)
-            @if($kaas->category=='NSFW(18+)')
+            @if($kaas->category=='NSFW (18+)')
                 <p class="category2">
                     <a href="{{ route('categories.show', $kaas) }}">{{$kaas->category}}</a>
                     <br>
