@@ -57,7 +57,7 @@
                                 <a style="color: red;" class="dropdown-item">RegisteredUser+</a>
                                 @endrole
                                 <a class="dropdown-item" href="http://127.0.0.1:8000/create">Create post</a>
-                                <a class="dropdown-item" href="http://127.0.0.1:8000/create">Merch</a>
+                                <a class="dropdown-item" href="http://127.0.0.1:8000/merch">Merch</a>
                                 <a class="dropdown-item" href="{{ route('logout') }}"
                                    onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
