@@ -57,6 +57,8 @@ Route::group(['middleware' => ['role:Admin']], function () {
     Route::post('/comment/search', 'CommentsController@postSearch')->middleware('auth')->name('comment.search');
 });
 
+Route::get('/comment', 'CommentsController@index')->name('comment.index');
+
 Route::get('/categories/{category}', 'CategoryController@show')->name('categories.show');
 
 /* tags */
@@ -82,8 +84,6 @@ Route::get('/images/{Image}', 'ImagesController@show');
 
 /* Merch */
 Route::resource('/merch', 'MerchController');
-Route::get('/merch/{merch}/edit', 'MerchController@edit');
-Route::get('/merch/{merch}', 'MerchController@show');
 
 
 Route::group(['middleware' => ['role:RegisteredUser|Admin']], function () {

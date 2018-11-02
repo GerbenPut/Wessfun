@@ -36,7 +36,7 @@ class ImagesTableSeeder extends Seeder
             'category_id' => '1',
         ]);
         DB::table('images')->insert([
-            'title' => 'Joris girlfriend',
+            'title' => 'woman',
             'description' => 'If you saw the texture on the wall first... Youre gay.',
             'sort' => 'Photo',
             'url' => 'http://getwallpapers.com/wallpaper/full/e/a/e/768598-popular-butt-wallpaper-1920x1080.jpg',
