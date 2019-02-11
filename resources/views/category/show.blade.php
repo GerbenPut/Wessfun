@@ -17,7 +17,7 @@
 
 {{--top-header start--}}
 <header class="top-header">
-    @include('Layouts.app')
+    @include('layouts.app')
     <form action="http://127.0.0.1:8000/create">
         <input class="createbutton" type="submit" value="Create Post"/>
     </form>
