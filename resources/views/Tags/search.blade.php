@@ -17,7 +17,7 @@
                 <th scope="col">Message</th>
                 <th scope="col">Edit</th>
                 <th scope="col">Delete</th>
-                <th> <a href="http://127.0.0.1:8000/tags/create">tag create</a> </th>
+                <th> <a href="https://wessfun.recoded.nl/tags/create">tag create</a> </th>
                 <th scope="col"></th>
             </tr>
             </thead>

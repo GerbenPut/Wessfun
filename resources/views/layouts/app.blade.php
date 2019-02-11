@@ -57,7 +57,7 @@
                                 @role('Admin', 'web')
                                 <a style="color: red;" class="dropdown-item">RegisteredUser+</a>
                                 @endrole
-                                <a class="dropdown-item" href="http://127.0.0.1:8000/create">Create post</a>
+                                <a class="dropdown-item" href="https://wessfun.recoded.nl/create">Create post</a>
                                 <a class="dropdown-item" href="{{ route('logout') }}"
                                    onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -65,8 +65,8 @@
                                 </a>
                                 @role('Admin', 'web')
                                 <a style="color: red;" class="dropdown-item">Admin Only</a>
-                                <a class="dropdown-item" href="http://127.0.0.1:8000/admin">Admin page</a>
-                                <a class="dropdown-item" href="http://127.0.0.1:8000/gradient">Games page</a>
+                                <a class="dropdown-item" href="https://wessfun.recoded.nl/admin">Admin page</a>
+                                <a class="dropdown-item" href="https://wessfun.recoded.nl/gradient">Games page</a>
                                 @else
                                     @endrole
 

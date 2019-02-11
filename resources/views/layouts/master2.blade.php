@@ -18,7 +18,7 @@
 {{--top-header start--}}
 <header class="top-header">
     @include('layouts.app')
-    <form action="http://127.0.0.1:8000/create">
+    <form action="https://wessfun.recoded.nl/create">
         <input class="createbutton" type="submit" value="Create Post"/>
     </form>
 </header>

@@ -9,4 +9,4 @@
         <p>{{$merch->url}}</p>
 
     </div>
-    <a href="http://127.0.0.1:8000/merch">Back to merch</a>
+    <a href="https://wessfun.recoded.nl/merch">Back to merch</a>

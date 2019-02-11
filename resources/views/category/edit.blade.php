@@ -43,7 +43,7 @@
                                         </div>
                                     @endif
 
-                                    <form action="http://127.0.0.1:8000/categories">
+                                    <form action="https://wessfun.recoded.nl/categories">
                                         <input class="backbutton" type="submit" value="Back"/>
                                     </form>
 

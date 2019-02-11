@@ -11,7 +11,7 @@
                 <header class="main-images-header">
                     {{--Hier komt de titel en description van de media--}}
 
-                    <a class="imagelink" href="http://127.0.0.1:8000/images/{{$image->id}}">
+                    <a class="imagelink" href="https://wessfun.recoded.nl/images/{{$image->id}}">
                         <td>{{$image->title}}</td>
                     </a>
                 </header>
@@ -26,7 +26,7 @@
                             <source src="{{$image->url}}" type="video/ogg">
                         </video>
                     @else
-                        <a class="imagelink" href="http://127.0.0.1:8000/images/{{$image->id}}"> <img class="postimage" src="{{$image->url}}">
+                        <a class="imagelink" href="https://wessfun.recoded.nl/images/{{$image->id}}"> <img class="postimage" src="{{$image->url}}">
                         </a>
                     @endif
 

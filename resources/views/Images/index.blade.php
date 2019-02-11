@@ -1,8 +1,8 @@
 @extends('welcome')
 <title>Laravel-joris</title>
 @section('links')
-<a href="http://127.0.0.1:8000/images/create">Add image</a>
-<a href="http://127.0.0.1:8000/images/list">Image lijst</a>
+<a href="https://wessfun.recoded.nl/images/create">Add image</a>
+<a href="https://wessfun.recoded.nl/images/list">Image lijst</a>
 <link href="{{asset('scss/style.css')}}" rel="stylesheet">
 @endsection
 <div id="test">

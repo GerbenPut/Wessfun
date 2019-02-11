@@ -64,7 +64,7 @@
                                     {!! Form::close() !!}
                                 </div>
 
-                                <form action="http://127.0.0.1:8000/admin">
+                                <form action="{{ url('/admin')}}">
                                     <input class="backbutton" type="submit" value="Back" />
                                 </form>
 

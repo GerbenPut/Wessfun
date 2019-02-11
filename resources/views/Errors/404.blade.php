@@ -3,7 +3,7 @@
     <title>Wessfun</title>
     <link href="{{asset('scss/error.scss')}}" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=ABeeZee" rel="stylesheet">
-    <meta http-equiv="refresh" content="5;url=http://127.0.0.1:8000"/>
+    <meta http-equiv="refresh" content="5;url=https://wessfun.recoded.nl"/>
 </head>
 <body>
 <div class="error-page">

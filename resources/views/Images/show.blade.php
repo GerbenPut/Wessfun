@@ -18,7 +18,7 @@
 {{--top-header start--}}
 <header class="top-header">
     @include('layouts.app')
-    <form action="http://127.0.0.1:8000/create">
+    <form action="https://wessfun.recoded.nl/create">
         <input class="createbutton" type="submit" value="Create Post"/>
     </form>
 </header>
@@ -76,7 +76,7 @@
                         <header class="main-images-header">
                             {{--Hier komt de titel en description van de media--}}
 
-                            <a class="imagelink" href="http://127.0.0.1:8000/images/{{$image->id}}">
+                            <a class="imagelink" href="https://wessfun.recoded.nl/images/{{$image->id}}">
                                 <td>{{$image->title}}: {{$image->description}}</td>
                             </a>
                         </header>
@@ -113,7 +113,7 @@
             </div>
             {{--@yield('image')--}}
         </section>
-        <form action="http://127.0.0.1:8000">
+        <form action="https://wessfun.recoded.nl">
             <input style="width: 50%; margin-left: 25%; margin-top: 5%;" class="backbutton" type="submit" value="Back to homepage"/>
         </form>
     </main>

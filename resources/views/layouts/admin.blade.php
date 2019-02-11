@@ -6,17 +6,17 @@
     <body id="top-image">
     <br><br>
         </form>
-        <form style="width: 30%; float: right; margin-right: 19%;" action="http://127.0.0.1:8000/categories">
+        <form style="width: 30%; float: right; margin-right: 19%;" action="https://wessfun.recoded.nl/categories">
             <input class="backbutton" type="submit" value="Categories"/>
         </form>
-        <form style="width: 30%; float: left; margin-left: 19%;" action="http://127.0.0.1:8000/comment">
+        <form style="width: 30%; float: left; margin-left: 19%;" action="https://wessfun.recoded.nl/comment">
             <input class="backbutton" type="submit" value="Comments"/>
         </form>
-        <form style="width: 30%; float: left; margin-left: 19%;" action="http://127.0.0.1:8000/tags">
+        <form style="width: 30%; float: left; margin-left: 19%;" action="https://wessfun.recoded.nl/tags">
             <input class="backbutton" type="submit" value="Tags"/>
         </form>
     </div>
-    <form action="http://127.0.0.1:8000">
+    <form action="https://wessfun.recoded.nl">
         <input style="width: 50%; margin-left: 25%;" class="backbutton" type="submit" value="Back to homepage"/>
     </form>
     </body>

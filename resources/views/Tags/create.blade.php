@@ -26,7 +26,7 @@
                                 {!! Form::close() !!}
                             </div>
 
-                            <form action="http://127.0.0.1:8000/tags">
+                            <form action="https://wessfun.recoded.nl/tags">
                                 <input class="backbutton" type="submit" value="Back"/>
                             </form>
                         </div>

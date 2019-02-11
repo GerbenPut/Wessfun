@@ -20,10 +20,10 @@
         {!! Form::close() !!}
     </div>
 
-    <form action="http://127.0.0.1:8000/categories">
+    <form action="https://wessfun.recoded.nl/categories">
         <input class="backbutton" type="submit" value="Back" />
     </form>
-    <a href="http://127.0.0.1:8000/category">Back to category</a>
+    <a href="https://wessfun.recoded.nl/category">Back to category</a>
     @if ($errors->any())
         <div>
             <ul>
