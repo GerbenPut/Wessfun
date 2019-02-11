@@ -22,7 +22,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 <div class="card-body">
-    <form action="{{ route('comment.search') }}" method="POST" class="ajaxSearch">
+    <form action="{{ route('comment.search') }}" method="post" class="ajaxSearch">
         <input type="search" name="query" placeholder="Type something to search" autocomplete="off">
         <input type="submit" value="Search">
     </form>
@@ -61,7 +61,7 @@
 
     var ajaxSearch = function(form) {
         $.ajax({
-            url: form.attr('action') + '/',
+            url: form.attr('action'),
             type: form.attr('method'),
             method: form.attr('method'),
             data: {"query": form.find('input[name=query]').val(), "_token": "{{ csrf_token() }}"}
