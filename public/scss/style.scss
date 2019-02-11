@@ -14,15 +14,16 @@ input, button, submit {
 .main-div {
   position: relative;
   top: 70px;
-}
-
-.main-div {
   display: grid;
-  grid-template-columns: 25% 50% 25%;
+  grid-template-columns: 25% 70% 5%;
 }
 
-.main-images {
-
+.main-divcomment {
+  position: relative;
+  top: 130px;
+  margin-bottom: 70px;
+  display: grid;
+  grid-template-columns: 15% 70% 15%;
 }
 
 .main-image {
@@ -78,10 +79,6 @@ input, button, submit {
 
 .deletebtn:hover {
   opacity: 1
-}
-
-.main-left-category {
-
 }
 
 .bottomfooter {
@@ -192,7 +189,7 @@ a:hover {
   position: relative;
   top: 50px;
   width: 70%;
-  height: 85vh;
+  height: 82vh;
   margin: 0 auto;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.50);
   display: -webkit-box;

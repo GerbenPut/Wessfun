@@ -6,9 +6,6 @@
     <div id="content">
 
     </div>
-    <div style="width: 80%; height: 80%; margin: 0 auto; position: relative; top: 80px;">
-        <embed width="100%" height="90%" src="http://slither.io/">
-    </div>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script>
         var $win = $(window),

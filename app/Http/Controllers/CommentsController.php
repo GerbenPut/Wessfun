@@ -88,7 +88,6 @@ class CommentsController extends Controller
         $validatedData = $request->validated;
 
         $comment->message = $request['content'];
-        $comment->image_id = $request['image_id'];
         $comment->save();
 
         return redirect()->action('CommentsController@index')->with('correct', 'Comment Gewijzigd');

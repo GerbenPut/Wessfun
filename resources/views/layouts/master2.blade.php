@@ -5,6 +5,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="../../../../favicon.ico">
+    <link rel="icon" href="https://i.ibb.co/ryhZRXL/wessfun.png" type="image/gif" sizes="16x16">
 
     <title>Wessfun</title>
 
@@ -38,10 +39,7 @@
             {{--@yield('image')--}}
         </section>
     </main>
-    <section class="main-right">
-        {{--Hier komen de advertisements?--}}
-        @include('Images.advertisement')
-    </section>
+
 </div>
 {{--main-div ends--}}
 <footer class="bottomfooter">

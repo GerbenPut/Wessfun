@@ -117,9 +117,6 @@
             <input style="width: 50%; margin-left: 25%; margin-top: 5%;" class="backbutton" type="submit" value="Back to homepage"/>
         </form>
     </main>
-    <section class="main-right">
-        {{--Hier komt reclame???--}}
-    </section>
 </div>
 {{--main-div ends--}}
 <footer class="bottomfooter">

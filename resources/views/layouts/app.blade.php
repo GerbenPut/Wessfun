@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="https://i.ibb.co/ryhZRXL/wessfun.png" type="image/gif" sizes="16x16">
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -57,7 +58,6 @@
                                 <a style="color: red;" class="dropdown-item">RegisteredUser+</a>
                                 @endrole
                                 <a class="dropdown-item" href="http://127.0.0.1:8000/create">Create post</a>
-                                <a class="dropdown-item" href="http://127.0.0.1:8000/merch">Merch</a>
                                 <a class="dropdown-item" href="{{ route('logout') }}"
                                    onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">

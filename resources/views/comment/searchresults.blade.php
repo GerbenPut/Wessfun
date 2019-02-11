@@ -18,7 +18,6 @@
             {{ Form::close() }}
         </td>
     </tr>
-<br>
 @empty
     <span>No results</span>
 @endforelse
